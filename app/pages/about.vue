@@ -20,10 +20,10 @@
       <h2 class="text-5xl max-w-7xl text-center mt-20 mb-10">Our Core Values</h2>
 
       <div class="grid md:grid-cols-4 gap-8 mx-auto">
-        <AppValueCard title="Justice" image="scale.svg" message="We advocate for fair and equitable treatment for all, especially those marginalized"/>
-        <AppValueCard title="Compassion" image="compassion.svg" message="We approach every individual with empathy, understanding their unique circumstances and challenges."/>
-        <AppValueCard title="Empowerment" image="scale.svg" message="We believe in giving people the tools and support to rebuild their lives and reach their full potential." />
-        <AppValueCard title="Community" image="globe.svg" message="We foster strong, supportive communities where everyone looks out for one another." />
+        <AppValueCard title="Justice" image="/images/scale.svg" message="We advocate for fair and equitable treatment for all, especially those marginalized"/>
+        <AppValueCard title="Compassion" image="/images/compassion.svg" message="We approach every individual with empathy, understanding their unique circumstances and challenges."/>
+        <AppValueCard title="Empowerment" image=".images/scale.svg" message="We believe in giving people the tools and support to rebuild their lives and reach their full potential." />
+        <AppValueCard title="Community" image="/images/globe.svg" message="We foster strong, supportive communities where everyone looks out for one another." />
       </div>
     </section>
 
