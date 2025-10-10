@@ -1,13 +1,17 @@
 <script setup lang="ts">
-
+const props = defineProps({
+  title: String,
+  description: String,
+  icon: String,
+})
 </script>
 
 <template>
 <div class="flex flex-col items-center rounded justify-center p-8 border border-gray-300">
-  <img src="@/assets/images/globe.svg" alt="human">
+  <img class="mb-4" :src="icon" alt="human">
   <div class="flex flex-col gap-3">
-    <h3 class="font-bold text-center text-xl">Justice reforms</h3>
-    <p class="text-center">Challenging laws that criminalize poverty and further marginalize the vulnerable communities</p>
+    <h3 class="font-bold text-center text-xl">{{title}}</h3>
+    <p class="text-center">{{description}}</p>
     <NuxtLink to="/projects" class="text-xl text-center text-blue-500">Learn more</NuxtLink>
   </div>
 </div>

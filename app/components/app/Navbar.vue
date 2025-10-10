@@ -14,11 +14,11 @@ const props = defineProps({
             </ul>
 
         </div>
-        <nav class="flex items-center  text-xl gap-8" :class="color ? 'text-green-600' : 'text-white'">
-          <NuxtLink to="/" class="font-bold">Home</NuxtLink>
-          <NuxtLink to="/projects" class="font-bold">Projects</NuxtLink>
-          <NuxtLink to="/about" class="font-bold">About Us</NuxtLink>
-          <NuxtLink to="/" class="font-bold">Events</NuxtLink>
+        <nav class="flex items-center  text-xl gap-8" :class="color ? 'text-black' : 'text-white'">
+          <NuxtLink to="/" class="font-bold hidden md:block">Home</NuxtLink>
+          <NuxtLink to="/projects" class="font-bold hidden md:block">Projects</NuxtLink>
+          <NuxtLink to="/about" class="font-bold hidden md:block">About Us</NuxtLink>
+          <NuxtLink to="/" class="font-bold hidden md:block">Events</NuxtLink>
             <ul class="flex gap-4">
             <NuxtLink to="/create" class="bg-blue-600 px-5 py-2 border border-blue-600 text-white rounded">Donate</NuxtLink>
             </ul>

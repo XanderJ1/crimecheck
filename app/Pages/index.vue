@@ -2,10 +2,25 @@
 
 import TestimonialCard from "~/components/app/TestimonialCard.vue";
 import InitiativeCard from "~/components/app/InitiativeCard.vue";
+import Navbar from "~/components/app/Navbar.vue";
 
-function setBackGround(){
+useHead({
+  title: 'Crime Check Foundation Ghana | Justice Reform and Humanitarian Aid',
+  meta: [
+    {
+      name: 'description',
+      content:
+          'Crime Check Foundation advocates for prison reform, justice transparency, and humanitarian support in Ghana. Learn about our key initiatives and impact.',
+    },
+    { name: 'keywords', content: 'Crime Check Foundation, Ghana, justice reform, prison reform, humanitarian support, vagrancy laws, USAID' },
+    { property: 'og:title', content: 'Crime Check Foundation Ghana' },
+    { property: 'og:description', content: 'Driving justice reform and supporting vulnerable lives in Ghana.' },
+    { property: 'og:image', content: '/assets/images/oppong.jpeg' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+  ],
+})
 
-}
 
 definePageMeta({
   layout: 'landing-page',
@@ -13,13 +28,17 @@ definePageMeta({
 </script>
 
 <template>
+  <div class="relative bg-[url('/assets/images/people.jpg')] bg-center bg-cover h-screen before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0">
+    <div class="relative z-10">
+      <Navbar />
+    </div>
     <section class="flex max-w-7xl mx-auto mt-20">
-      <div class="flex flex-col gap-8">
-        <h1 class=" text-white font-bold font-sans text-[60px] max-w-[530px]  text-2xl">
+      <div class="flex flex-col items-center gap-8 md:items-start md:ml-20">
+        <h1 class="main text-center md:text-start text-white font-bold font-sans text-3xl md:text-[60px] max-w-[530px]">
           REINFORCING JUDICIAL PROTECTION FOR INMATES
         </h1>
 
-        <p class="text-white max-w-[400px]">In the heart of Ghana we fight for those who are neglected by the system.
+        <p class="text-white text-center max-w-[400px]">In the heart of Ghana we fight for those who are neglected by the system.
           We provide justice for those who lack the means to fight for themselves.
         </p>
 
@@ -30,17 +49,18 @@ definePageMeta({
 
       </div>
       <div>
-        <img class="opacity-0" src="@/assets/images/people.jpg" alt="">
+        <img class="hidden opacity-0" src="@/assets/images/people.jpg" alt="people">
       </div>
     </section>
+  </div>
     <section class="mt-40 gap-8">
       <h2 class="text-4xl mb-15 text-center">How We Impact Others</h2>
-      <div class="flex max-w-7xl mx-auto gap-20">
-        <img src="@/assets/images/donate_prisons.jpg" class="w-xl" alt="">
+      <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 gap-20">
+        <img src="@/assets/images/donate_prisons.jpg" class="w-xl" alt="prisoners">
         <div class="right flex flex-col gap-8 justify-center">
           <div class="flex flex-col gap-2">
             <div class="flex items-center gap-2">
-              <img src="@/assets/images/icon_love.svg" class="h-10 w-15" alt="">
+              <img src="@/assets/images/icon_love.svg" class="h-10 w-15" alt="humanitarian support">
               <h3 class="text-xl font-bold">Human Support</h3>
             </div>
             <p>Transforming lives through strategic legal interventions and humanitarian support </p>
@@ -49,16 +69,16 @@ definePageMeta({
 
           <div class="flex flex-col gap-2">
             <div class="flex items-center gap-2">
-              <img src="@/assets/images/care.png" class="h-10 w-15" alt="">
+              <img src="@/assets/images/care.png" class="h-10 w-15" alt="care">
               <h3 class="text-xl font-bold">Legal Advocacy</h3>
             </div>
-            <p>Transforming lives through strategic legal interventions and humanitarian support </p>
+            <p>Challenging unjust laws that criminalize poverty and marginalize vulnerable populations. </p>
 
           </div>
 
           <div class="flex flex-col gap-2">
             <div class="flex items-center gap-2">
-              <img src="@/assets/images/icon_love.svg" class="h-10 w-15" alt="">
+              <img src="@/assets/images/icon_love.svg" class="h-10 w-15" alt="care_icon">
               <h3 class="text-xl font-bold">Prison Support</h3>
             </div>
             <p>Providing rehabilitation programs and resources for incarcerated individuals seeking redemption.</p>
@@ -73,71 +93,85 @@ definePageMeta({
       </div>
     </section>
 
-  <article class="flex max-w-7xl mx-auto mt-20 my-10 items-center gap-10">
-    <h2 class="text-xl">Trusted by leading human rights organizations</h2>
+  <article class="flex flex-col md:flex-row max-w-7xl mx-auto mt-20 my-10 items-center gap-10 bg-linear-gradient">
+    <h2 class="text-xl text-center md:text-start">Trusted by leading human rights organizations</h2>
     <div class="flex ml-8 gap-8">
-      <img src="@/assets/images/gcb.webp" class="w-15 h-15" alt="" />
-      <img src="@/assets/images/osiwa.png" class="w-15 h-15" alt="" />
-      <img src="@/assets/images/usaid.svg" class="w-15 h-15" alt="" />
+      <img src="/images/gcb.webp" class="w-15 h-15" alt="GCB partner" />
+      <img src="/images/osiwa.png" class="w-15 h-15" alt="OSIWA partner" />
+      <img src="/images/usaid.svg" class="w-15 h-15" alt="USAID partner" />
     </div>
   </article>
 
- <section class="max-w-7xl mx-auto px-2">
-   <h1 class="text-4xl font-semibold mt-10">What others say about us</h1>
+ <section class="max-w-7xl mx-auto px-2 mt-20">
+   <h2 class="text-4xl text-center md:text-start font-semibold mt-10">What others say about us</h2>
    <p class="text-2xl my-8">Real stories of Transformation</p>
 
-   <div class="flex max-w-7xl mx-auto gap-10 justify-center ">
+   <div class="flex flex-col max-w-7xl mx-auto gap-10 justify-center px-2 md:flex-row ">
      <TestimonialCard
-         message="CrimeCheck foundation gave me a chance when no one believed in me." name="Akosua Serwaah" role="Former prisoner" image="testimonial3.jpg" />
+         message="CrimeCheck foundation gave me a chance when no one believed in me." name="Akosua Serwaah" role="Former prisoner" image="/images/testimonial3.jpg" />
      <TestimonialCard
-         message="Their work is changing the narrative around criminal justice in Ghana." name="Theresa Markwei" role="lawyer" image="testimonial2.jpg"  />
+         message="Their work is changing the narrative around criminal justice in Ghana." name="Theresa Markwei" role="lawyer" image="/images/testimonial1.jpg" />
      <TestimonialCard
-         message="We've seen real systemic change through their dedicated advocacy." name="Regina Turkson" role="MP. Agona East" image="testimonial1.jpg"/>
+         message="We've seen real systemic change through their dedicated advocacy." name="Regina Turkson" role="MP. Agona East" image="/images/testimonial2.jpg"/>
    </div>
  </section>
 
-  <article class="flex relative justify-between items-center px-20 h-70 bg-[position:center_60%] max-w-7xl mx-auto my-15 bg-[url('/assets/images/ai_inmate_behind_bars.jpg')]">
+  <article class="flex flex-col md:flex-row  relative justify-between items-center px-20 h-70 bg-[position:center_60%] bg-cover before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0 max-w-7xl mx-auto my-15 bg-[url('/assets/images/ai_inmate_behind_bars.jpg')]">
     <div>
-      <h2 class="text-4xl mb-5 font-bold text-white">Be a part the change  you seek</h2>
-      <p class="text-xl text-white ">Join Our mission to transform justice</p>
+      <h2 class="text-3xl mt-8 text-center md:text-start mb-5 font-bold text-white">Be a part the change  you seek</h2>
+      <p class="text-xl text-center text-white">Join Our mission to transform justice</p>
     </div>
-    <button class="text-2xl h-fit px-4 py-3 rounded text-white bg-blue-600 border border-blue-600" to="/">Donate Now</button>
+    <button class="text-2xl mb-5 md:mb-0 h-fit px-4 py-3 rounded text-white bg-blue-600 border border-blue-600" to="/">Donate Now</button>
   </article>
 
-  <section class="max-w-7xl mx-auto mt-20 mb-16">
-    <h2 class="text-5xl text-center mb-20">Our Key Initiatives</h2>
-    <div class="flex gap-2">
-      <InitiativeCard />
-      <InitiativeCard />
-      <InitiativeCard />
-      <InitiativeCard />
+  <section class="max-w-7xl px-2 mx-auto mt-20 mb-16">
+    <h2 class="text-5xl text-center mb-16">Our Key Initiatives</h2>
+    <div class="flex flex-col gap-4 md:flex-row">
+      <InitiativeCard
+        title="Prison reforms"
+        description="Challenging laws that criminalize poverty and further marginalize the vulnerable communities"
+        icon="/images/reform.svg"
+      />
+      <InitiativeCard
+          title="Vagrancy Law"
+          description="Challenging laws that criminalize poverty and further marginalize the vulnerable communities"
+          icon="/images/book.svg"
+      />
+      <InitiativeCard
+          title="Justice Advocacy"
+          description="Challenging laws that criminalize poverty and further marginalize the vulnerable communities"
+          icon="/images/scale.svg"
+      />
+      <InitiativeCard
+          title="Humanitarian Support"
+          description="Challenging laws that criminalize poverty and further marginalize the vulnerable communities"
+          icon="/images/globe.svg"
+      />
+
     </div>
   </section>
   <section class="max-w-7xl mx-auto">
-    <h1 class="text-center text-4xl mb-15 mt-20">Our Gallery</h1>
-    <div class="flex mx-auto justify-center gap-5">
-      <img class="w-70 h-70" src="@/assets/images/donate.jpeg"  alt="school donate"/>
-      <img class="w-70 h-70" src="@/assets/images/inmate_gift.png" alt="gift to inmate"/>
-      <img class="w-70 h-70" src="@/assets/images/prisoners.jpg" alt="prisoners"/>
-      <img class="w-70 h-70" src="@/assets/images/oppong.jpeg" alt="oppong" />
+    <h2 class="text-center text-4xl mb-15 mt-20">Our Gallery</h2>
+    <div class="grid md:grid-cols-4 mx-auto px-4 gap-5 flex-col md:flex-row">
+      <img class="w-full h-100 rounded-xl" src="@/assets/images/donate.jpeg"  alt="school donate"/>
+      <img class="w-full h-100 rounded-xl" src="@/assets/images/inmate_gift.png"  alt="school donate"/>
+      <img class="w-full h-100 rounded-xl" src="@/assets/images/prisoners.jpg"  alt="school donate"/>
+      <img class="w-full h-100 rounded-xl" src="@/assets/images/oppong.jpeg"  alt="school donate"/>
 
     </div>
   </section>
 
-  <div>
-    <h1 class="max-w-7xl mx-auto text-4xl mt-25 mb-8 ">Contact Us</h1>
-    <form class="flex flex-col gap-5 ml-30">
-      <input class="w-100 h-10 pl-3 bg-gray-200" type="text" id="name" placeholder="Full Name" />
-      <input class="w-100 h-10 pl-3 bg-gray-200"type="text" id="email" placeholder="Email"/>
-      <input class="w-100 h-10 pl-3 bg-gray-200"type="number" id="phone" placeholder="Phone" />
-      <textarea class="w-100 h-20 pl-3 bg-gray-200" placeholder="Message" name="message" id="message"></textarea>
-      <button class="w-fit text-left rounded border border-green-400 px-6 py-2 bg-green-400 text-white">Send</button>
+  <section class="max-w-7xl mx-auto mt-20 mb-16">
+    <h2 class="max-w-7xl mx-auto text-center text-5xl mt-25 mb-8 md:text-start">Contact Us</h2>
+    <form class="flex flex-col  gap-5 px-2 md:justify-start">
+      <input class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="text" id="name" placeholder="Full Name" />
+      <input class="w-full md:w-130 h-15 pl-3 bg-gray-200"type="text" id="email" placeholder="Email"/>
+      <input class="w-full md:w-130 h-15 pl-3 bg-gray-200"type="number" id="phone" placeholder="Phone" />
+      <textarea class="w-full md:w-130 h-25 pl-3 bg-gray-200" placeholder="Message" name="message" id="message"></textarea>
+      <button class="w-full text-center md:w-fit md:text-left rounded border border-green-500 px-15 py-3 bg-green-500 text-white">Send</button>
     </form>
-  </div>
-  
-  <div>
-    .
-  </div>
+  </section>
+
 
 
 </template>

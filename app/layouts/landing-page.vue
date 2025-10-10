@@ -4,12 +4,9 @@ import AppFooter from "~/components/app/Footer.vue";
 </script>
 
 <template>
-<div class="relative bg-[url('/assets/images/people.jpg')] bg-center bg-cover h-screen">
-  <Navbar />
-  <slot />
-  <AppFooter />
-</div>
 
+      <slot />
+      <AppFooter />
 </template>
 
 <style scoped>

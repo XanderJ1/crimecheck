@@ -10,12 +10,12 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="grid grid-cols-2 p-2 items-center gap-8">
-    <img class="w-120 rounded-xl" :src="image" alt="" />
-    <div class="flex flex-col ml-15 gap-4">
-      <h3>{{ title }}</h3>
+  <div class="grid md:grid-cols-2 p-2 items-center">
+    <img class="flex w-130 rounded-xl justify-end" :src="image" alt="" />
+      <div class="flex flex-col md:ml-15 gap-4">
+      <h3 class="font-bold text-xl mb-4 mt-2">{{ title }}</h3>
       <p>{{story}}</p>
-      <h4>{{ name }}</h4>
+      <h4 class="font-semibold"> - {{ name }}</h4>
     </div>
 
   </div>

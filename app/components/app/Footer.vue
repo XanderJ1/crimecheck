@@ -4,9 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
         <!-- Brand Section -->
         <div class="flex flex-col">
-          <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-5 border-4 border-white">
-            <span class="text-slate-900 font-bold text-sm">CCF</span>
-          </div>
+          <img class="w-20 h-20 mb-4" src="/images/logo.png" />
           <p class="text-slate-400 text-sm leading-relaxed">
             Dedication to crime prevention, advocacy, justice reform, and support for vulnerable groups
           </p>
@@ -27,17 +25,17 @@
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/events" class="text-slate-400 hover:text-white transition-colors text-sm">
+              <NuxtLink to="#" class="text-slate-400 hover:text-white transition-colors text-sm">
                 Events
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/volunteer" class="text-slate-400 hover:text-white transition-colors text-sm">
+              <NuxtLink to="#" class="text-slate-400 hover:text-white transition-colors text-sm">
                 Volunteer
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/contact" class="text-slate-400 hover:text-white transition-colors text-sm">
+              <NuxtLink to="#" class="text-slate-400 hover:text-white transition-colors text-sm">
                 Contact us
               </NuxtLink>
             </li>
@@ -99,7 +97,7 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
-              class="w-10 h-10 flex items-center justify-center hover:-translate-y-1 transition-transform"
+              class="flex items-center   hover:-translate-y-1 transition-transform"
             >
               <i class="pi pi-twitter text-xl"></i>
             </a>
@@ -124,10 +122,10 @@
           ©2025 CrimeCheck Foundation. All rights reserved.
         </p>
         <div class="flex flex-col md:flex-row gap-6 md:gap-8">
-          <NuxtLink to="/privacy" class="text-slate-500 hover:text-white transition-colors text-sm">
+          <NuxtLink to="#" class="text-slate-500 hover:text-white transition-colors text-sm">
             Privacy policy
           </NuxtLink>
-          <NuxtLink to="/terms" class="text-slate-500 hover:text-white transition-colors text-sm">
+          <NuxtLink to="#" class="text-slate-500 hover:text-white transition-colors text-sm">
             Terms and conditions
           </NuxtLink>
         </div>
