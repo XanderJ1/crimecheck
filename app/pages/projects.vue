@@ -33,7 +33,7 @@ import StoryCard from "~/components/app/StoryCard.vue";
         title="Vagrancy Law"
         description="In partnership with key stakeholders, CCF leads the Decriminalizing Vagrancy Laws and Advocacy Project (DVLA) to protect poor and homeless Ghanaians from unjust arrests under outdated local by-laws. The initiative promotes legal awareness, policy reform,
         and social inclusion, helping citizens live freely without fear of criminalization for poverty-related offenses."
-        image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/vagrant.jpgj" reverse />
+        image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/vagrant.jpg" reverse />
     <ProjectCard title="Justice Tracker" description="CCF partners with USAID and Ghana’s justice institutions to implement the Case Tracking System (CTS)—a digital platform that monitors criminal cases from arrest to trial and beyond. The project enhances transparency, accountability, and timely justice
     while empowering citizens to monitor and demand fair treatment within the justice process."
                  image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/justice_hammer.jpg" />
