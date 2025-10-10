@@ -1,19 +1,20 @@
 <script setup lang="ts">
 
+import Navbar from "~/components/app/Navbar.vue";
 </script>
 
 <template>
   <main>
-    <section class="max-w-7xl px-2 mx-auto">
-        <h1 class="text-5xl mb-12">About Us</h1>
-        <div class="grid md:grid-cols-2 justify-between items-center">
-            <h3 class="text-2xl mb-8">We are an NGO dedicated to justice reform and advocacy, crime prevention and support for vulnerable groups. We believe in building a world where everyone has the opportunity to thrive.</h3>
-            <NuxtImg class="rounded-2xl w-130 h-100" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/donations-2.webp" alt="logo" />
+    <section class="bg-slate-800 text-white px-2">
+      <Navbar />
+        <h1 class="text-6xl font-bold text-center md:text-start mb-12 max-w-7xl mx-auto mt-18">About Us</h1>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 justify-between items-center">
+            <h3 class="text-2xl text-center md:text-start mb-8 pb-8 leading-relaxed">We are an NGO dedicated to justice reform and advocacy, crime prevention and support for vulnerable groups. We believe in building a world where everyone has the opportunity to thrive.</h3>
         </div>
     </section>
     <div class="px-2">
-        <h2 class="text-5xl max-w-7xl mx-auto text-left mt-20  mb-8">Our Story</h2>
-        <p class="text max-w-7xl mx-auto">CrimeCheck Foundation was born from a vision to transform how communities address crime and justice. We recognized that traditional approaches often fail the most vulnerable, and that lasting change requires both grassroots engagement and systemic reform. Our journey began with a simple belief: that everyone deserves safety, dignity, and the chance to build a better future. Today, we work across multiple fronts—from direct support services to policy advocacy—always keeping the needs of vulnerable populations at the heart of everything we do.</p>
+        <h2 class="text-5xl max-w-7xl mx-auto text-left mt-20  mb-8 ">Our Story</h2>
+        <p class="text max-w-7xl mx-auto space-y-4 text-slate-600 text-lg leading-relaxed">CrimeCheck Foundation was born from a vision to transform how communities address crime and justice. We recognized that traditional approaches often fail the most vulnerable, and that lasting change requires both grassroots engagement and systemic reform. Our journey began with a simple belief: that everyone deserves safety, dignity, and the chance to build a better future. Today, we work across multiple fronts—from direct support services to policy advocacy—always keeping the needs of vulnerable populations at the heart of everything we do.</p>
     </div>
 
     <section class="max-w-7xl px-2 mx-auto">
