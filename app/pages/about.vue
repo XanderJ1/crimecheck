@@ -1,6 +1,10 @@
 <script setup lang="ts">
 
 import Navbar from "~/components/app/Navbar.vue";
+
+definePageMeta({
+  layout: 'about-page',
+})
 </script>
 
 <template>

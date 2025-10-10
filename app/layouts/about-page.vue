@@ -6,10 +6,7 @@ import Footer from "~/components/app/Footer.vue";
 
 <template>
     <div class="bg-gray-100">
-      <Navbar color/>
-      <main class="container mt-20">
-        <slot />
-      </main>
+        <NuxtPage />
     </div>
 
 
