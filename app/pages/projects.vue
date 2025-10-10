@@ -28,15 +28,15 @@ import StoryCard from "~/components/app/StoryCard.vue";
         title="Humanitarian Support"
         description="Crime Check Foundation extends compassion to society’s most vulnerable.
      Through donations and outreach, the Foundation supports ex-prisoners, widows, orphans, the sick, and the poor—providing medical care, education, and livelihood assistance. CCF’s humanitarian work restores dignity and hope to those often forgotten."
-        image="/images/support.jpg"  />
+        image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/support.jpg"  />
     <ProjectCard
         title="Vagrancy Law"
         description="In partnership with key stakeholders, CCF leads the Decriminalizing Vagrancy Laws and Advocacy Project (DVLA) to protect poor and homeless Ghanaians from unjust arrests under outdated local by-laws. The initiative promotes legal awareness, policy reform,
         and social inclusion, helping citizens live freely without fear of criminalization for poverty-related offenses."
-        image="/images/vagrant.jpg" reverse />
+        image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/vagrant.jpgj" reverse />
     <ProjectCard title="Justice Tracker" description="CCF partners with USAID and Ghana’s justice institutions to implement the Case Tracking System (CTS)—a digital platform that monitors criminal cases from arrest to trial and beyond. The project enhances transparency, accountability, and timely justice
     while empowering citizens to monitor and demand fair treatment within the justice process."
-                 image="/images/justice_hammer.jpg" />
+                 image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/justice_hammer.jpg" />
   </section>
 
   <section class="max-w-7xl mx-auto mt-20 mb-16">
@@ -47,7 +47,7 @@ import StoryCard from "~/components/app/StoryCard.vue";
           story="A teacher who was not given access to lawyers  wrongfully incarcerated was  released after Crimecheck
          listened to his story nd later"
           name="Ama Animah"
-          image="images/teacher_rescue.jpg"
+          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
       />
 
       <AppStoryCard2
@@ -55,7 +55,7 @@ import StoryCard from "~/components/app/StoryCard.vue";
           story="A teacher who was not given access to lawyers  wrongfully incarcerated was  rreleased after Crimecheck
          listened to his story nd later"
           name="Ama Animah"
-          image="images/teacher_rescue.jpg"
+          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
           reverse
       />
 
@@ -64,7 +64,7 @@ import StoryCard from "~/components/app/StoryCard.vue";
           story="A teacher who was not given access to lawyers  wrongfully incarcerated was  rreleased after Crimecheck
          listened to his story nd later"
           name="Ama Animah"
-          image="/images/ama_animah.jpg"
+          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/ama_animah.jpg"
       />
 
       <AppStoryCard2
@@ -72,7 +72,7 @@ import StoryCard from "~/components/app/StoryCard.vue";
           story="A teacher who was not given access to lawyers  wrongfully incarcerated was  rreleased after Crimecheck
          listened to his story nd later"
           name="Ama Animah"
-          image="/images/teacher_rescue.jpg"
+          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
           reverse
       />
 
