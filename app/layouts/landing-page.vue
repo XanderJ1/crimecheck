@@ -5,7 +5,7 @@ import AppFooter from "~/components/app/Footer.vue";
 
 <template>
 
-      <slot />
+      <NuxtPage />
       <AppFooter />
 </template>
 
