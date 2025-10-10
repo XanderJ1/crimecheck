@@ -8,7 +8,7 @@
         <h1 class="text-5xl mb-12">About Us</h1>
         <div class="grid md:grid-cols-2 justify-between items-center">
             <h3 class="text-2xl mb-8">We are an NGO dedicated to justice reform and advocacy, crime prevention and support for vulnerable groups. We believe in building a world where everyone has the opportunity to thrive.</h3>
-            <img class="rounded-2xl w-130 h-100" src="../assets/images/donations-2.webp" alt="logo" />
+            <NuxtImg class="rounded-2xl w-130 h-100" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/donations-2.webp" alt="logo" />
         </div>
     </section>
     <div class="px-2">
@@ -20,10 +20,10 @@
       <h2 class="text-5xl max-w-7xl text-center mt-20 mb-10">Our Core Values</h2>
 
       <div class="grid md:grid-cols-4 gap-8 mx-auto">
-        <AppValueCard title="Justice" image="/images/scale.svg" message="We advocate for fair and equitable treatment for all, especially those marginalized"/>
-        <AppValueCard title="Compassion" image="/images/compassion.svg" message="We approach every individual with empathy, understanding their unique circumstances and challenges."/>
-        <AppValueCard title="Empowerment" image=".images/scale.svg" message="We believe in giving people the tools and support to rebuild their lives and reach their full potential." />
-        <AppValueCard title="Community" image="/images/globe.svg" message="We foster strong, supportive communities where everyone looks out for one another." />
+        <AppValueCard title="Justice" image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/scale.svg" message="We advocate for fair and equitable treatment for all, especially those marginalized"/>
+        <AppValueCard title="Compassion" image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/compassion.svg" message="We approach every individual with empathy, understanding their unique circumstances and challenges."/>
+        <AppValueCard title="Empowerment" image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/scale.svg" message="We believe in giving people the tools and support to rebuild their lives and reach their full potential." />
+        <AppValueCard title="Community" image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/globe.svg" message="We foster strong, supportive communities where everyone looks out for one another." />
       </div>
     </section>
 
@@ -101,7 +101,8 @@
     <section class="max-w-7xl px-2 mx-auto items-center mt-20 mb-16">
       <h2 class="text-4xl mt-20 mb-8">Meet Our Founder</h2>
       <div class="flex flex-col md:flex-row gap-6 items-center">
-        <img class="rounded-xl" src="@/assets/images/ibrahim.jpeg" alt="" />
+        <img class="rounded-xl"   width="1200"  quality="100"
+                 height="800" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/ibrahim.jpeg" alt="" />
         <div class="flex flex-col gap-2">
           <h3 class="text-2xl mb-10">Ibrahim Oppong Kwarteng</h3>
           <h4 class="text-xl mb-4">Founder & Executive Director</h4>
@@ -116,7 +117,7 @@
     <section class="max-w-7xl mx-auto px-2 mt-20 mb-16">
       <h2 class="text-4xl text-center mt-30 mb-15">Achievements</h2>
       <div class="flex flex-col md:flex-row gap-6 items-center">
-        <img class="h-100 w-120 rounded-xl" src="@/assets/images/award1-1024x683.jpeg" alt="" />
+        <NuxtImg class="h-100 w-120 rounded-xl" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/award1-1024x683.jpeg" alt="" />
         <div class="flex mx-4 flex-col gap-2">
           <div class="flex items-center gap-2 mb-4">
             <div class="bg-blue- border h-2 w-2 border-blue-600 bg-blue-600 p-2 rounded-full"></div>

@@ -56,11 +56,11 @@ definePageMeta({
     <section class="mt-40 gap-8">
       <h2 class="text-4xl mb-15 text-center">How We Impact Others</h2>
       <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 gap-20">
-        <img src="@/assets/images/donate_prisons.jpg" class="w-xl" alt="prisoners">
+        <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/donate_prisons.jpg" class="w-xl" alt="prisoners" />
         <div class="right flex flex-col gap-8 justify-center">
           <div class="flex flex-col gap-2">
             <div class="flex items-center gap-2">
-              <img src="@/assets/images/icon_love.svg" class="h-10 w-15" alt="humanitarian support">
+              <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/icon_love.svg" class="h-10 w-15" alt="humanitarian support" />
               <h3 class="text-xl font-bold">Human Support</h3>
             </div>
             <p>Transforming lives through strategic legal interventions and humanitarian support </p>
@@ -69,7 +69,7 @@ definePageMeta({
 
           <div class="flex flex-col gap-2">
             <div class="flex items-center gap-2">
-              <img src="@/assets/images/care.png" class="h-10 w-15" alt="care">
+              <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/care.png" class="h-10 w-15" alt="care" />
               <h3 class="text-xl font-bold">Legal Advocacy</h3>
             </div>
             <p>Challenging unjust laws that criminalize poverty and marginalize vulnerable populations. </p>
@@ -78,7 +78,7 @@ definePageMeta({
 
           <div class="flex flex-col gap-2">
             <div class="flex items-center gap-2">
-              <img src="@/assets/images/icon_love.svg" class="h-10 w-15" alt="care_icon">
+              <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/icon_love.svg" class="h-10 w-15" alt="care_icon" />
               <h3 class="text-xl font-bold">Prison Support</h3>
             </div>
             <p>Providing rehabilitation programs and resources for incarcerated individuals seeking redemption.</p>
@@ -96,9 +96,9 @@ definePageMeta({
   <article class="flex flex-col md:flex-row max-w-7xl mx-auto mt-20 my-10 items-center gap-10 bg-linear-gradient">
     <h2 class="text-xl text-center md:text-start">Trusted by leading human rights organizations</h2>
     <div class="flex ml-8 gap-8">
-      <img src="/images/gcb.webp" class="w-15 h-15" alt="GCB partner" />
-      <img src="/images/osiwa.png" class="w-15 h-15" alt="OSIWA partner" />
-      <img src="/images/usaid.svg" class="w-15 h-15" alt="USAID partner" />
+      <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/gcb.webp" class="w-15 h-15" alt="GCB partner" />
+      <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/osiwa.png" class="w-15 h-15" alt="OSIWA partner" />
+      <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/usaid.svg" class="w-15 h-15" alt="USAID partner" />
     </div>
   </article>
 
@@ -108,11 +108,21 @@ definePageMeta({
 
    <div class="flex flex-col max-w-7xl mx-auto gap-10 justify-center px-2 md:flex-row ">
      <TestimonialCard
-         message="CrimeCheck foundation gave me a chance when no one believed in me." name="Akosua Serwaah" role="Former prisoner" image="/images/testimonial3.jpg" />
+         message="CrimeCheck foundation gave me a chance when no one believed in me."
+         name="Akosua Serwaah"
+         role="Former prisoner"
+         image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/testimonial1.jpg"
+         />
      <TestimonialCard
-         message="Their work is changing the narrative around criminal justice in Ghana." name="Theresa Markwei" role="lawyer" image="/images/testimonial1.jpg" />
+         message="Their work is changing the narrative around criminal justice in Ghana."
+         name="Theresa Markwei"
+         role="lawyer"
+         image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/testimonial2.jpg" />
      <TestimonialCard
-         message="We've seen real systemic change through their dedicated advocacy." name="Regina Turkson" role="MP. Agona East" image="/images/testimonial2.jpg"/>
+         message="We've seen real systemic change through their dedicated advocacy."
+         name="Regina Turkson"
+         role="MP. Agona East"
+         image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/testimonial3.jpg"/>
    </div>
  </section>
 
@@ -153,10 +163,10 @@ definePageMeta({
   <section class="max-w-7xl mx-auto">
     <h2 class="text-center text-4xl mb-15 mt-20">Our Gallery</h2>
     <div class="grid md:grid-cols-4 mx-auto px-4 gap-5 flex-col md:flex-row">
-      <img class="w-full h-100 rounded-xl" src="@/assets/images/donate.jpeg"  alt="school donate"/>
-      <img class="w-full h-100 rounded-xl" src="@/assets/images/inmate_gift.png"  alt="school donate"/>
-      <img class="w-full h-100 rounded-xl" src="@/assets/images/prisoners.jpg"  alt="school donate"/>
-      <img class="w-full h-100 rounded-xl" src="@/assets/images/oppong.jpeg"  alt="school donate"/>
+      <NuxtImg class="w-full h-100 rounded-xl" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/donate.jpeg"  alt="school donate"/>
+      <NuxtImg class="w-full h-100 rounded-xl" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/inmate_gift.png"  alt="school donate"/>
+      <NuxtImg class="w-full h-100 rounded-xl" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/prisoners.jpg"  alt="school donate"/>
+      <NuxtImg class="w-full h-100 rounded-xl" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/oppong.jpeg"  alt="school donate"/>
 
     </div>
   </section>
