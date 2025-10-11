@@ -1,4 +1,3 @@
-
 <template>
   <div class="bg-white">
     <!-- Hero Section -->
@@ -57,7 +56,7 @@
       </div>
     </section>
 
-    <!-- Mission & Vision Section -->
+  <!-- Mission & Vision Section -->
     <section class="py-16 lg:py-24">
       <div class="max-w-7xl mx-auto px-6 lg:px-10">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
@@ -245,12 +244,11 @@ const stats = [
   { value: '10+', label: 'Years of Service' }
 ]
 
-
-
 const prismic = usePrismic()
 const { data: events } = await useAsyncData('event', () =>
     prismic.client.getAllByType('event')
 )
-console.log('event:', event.value)
+console.log('event:', events.value)
 
 </script>
+
