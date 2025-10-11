@@ -7,13 +7,16 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource/atkinson-hyperlegible": "^5.2.8",
     "@nuxt/image": "1.11.0",
+    "@nuxtjs/prismic": "^4.1.0",
     "@primevue/nuxt-module": "4.4.1",
+    "@prismicio/client": "^7.20.1",
     "@tailwindcss/vite": "^4.1.14",
     "nuxt": "^4.1.2",
     "primeicons": "^7.0.0",
@@ -23,6 +26,9 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "daisyui": "^5.1.27"
+    "@slicemachine/adapter-nuxt": "^0.3.84",
+    "daisyui": "^5.1.27",
+    "@nuxtjs/prismic": "^4.1.0",
+    "slice-machine-ui": "^2.18.2"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "repositoryName": "crimeheckfoundation",
+  "adapter": "@slicemachine/adapter-nuxt",
+  "apiEndpoint": "https://crimeheckfoundation.cdn.prismic.io/api/v2",
+  "libraries": ["./app/slices"],
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}

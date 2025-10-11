@@ -1,13 +1,14 @@
+
 <template>
   <div class="bg-white">
     <!-- Hero Section -->
     <section class="bg-slate-900 text-white py-20 lg:py-32">
       <div class="max-w-7xl mx-auto px-6 lg:px-10">
-        <div class="max-w-4xl">
-          <h1 class="text-4xl lg:text-6xl font-bold mb-6">About Us</h1>
-          <p class="text-xl lg:text-2xl text-slate-100">
-            We are an NGO dedicated to justice reform and advocacy, crime prevention and support for vulnerable groups. We believe in building a world where everyone has the opportunity to thrive.
-          </p>
+        <div v-for="event in events" :key="event.id" class="mb-10">
+          <h2 class="text-2xl font-semibold mb-2">{{ event.data.title }}</h2>
+          <p class="text-gray-500 mb-4">{{ event.data.date }} — {{ event.data.location }}</p>
+          <NuxtImg :src="event.data.image?.url" :alt="event.data.image?.alt || event.data.title" class="rounded-lg shadow-lg" />
+          <p class="mt-4 text-slate-700">{{ event.data.description }}</p>
         </div>
       </div>
     </section>
@@ -243,4 +244,13 @@ const stats = [
   { value: '200+', label: 'Volunteers' },
   { value: '10+', label: 'Years of Service' }
 ]
+
+
+
+const prismic = usePrismic()
+const { data: events } = await useAsyncData('event', () =>
+    prismic.client.getAllByType('event')
+)
+console.log('event:', event.value)
+
 </script>
