@@ -4,9 +4,12 @@ import AppFooter from "~/components/app/Footer.vue";
 </script>
 
 <template>
-
-      <NuxtPage />
-      <AppFooter />
+  <main role="main">
+    <NuxtPage />
+  </main>
+  <footer>
+    <AppFooter />
+  </footer>
 </template>
 
 <style scoped>

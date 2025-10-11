@@ -3,12 +3,24 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
     ssr: true,
     nitro: {
-        preset: 'node-server'
+        preset: process.env.NITRO_PRESET || 'node-server',
     },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css','primeicons/primeicons.css', '@fontsource/atkinson-hyperlegible/700.css', "@fontsource-variable/inter"],
   modules: ['@primevue/nuxt-module', '@nuxt/image'],
+  app: {
+    head: {
+      link: [
+          {
+          key: 'canonical',
+          rel: 'canonical',
+          href: "https://crimecheckfoundationgh.org"
+          },
+          { rel: 'icon', type: 'image/png', href: '/images/logo.png' }
+      ]
+    }
+  },
   vite: {
     plugins: [
       tailwindcss(),

@@ -11,7 +11,7 @@ COPY . .
 RUN corepack enable && corepack prepare pnpm@latest --activate
 RUN pnpm install --frozen-lockfile
 
-# 5️⃣ Build your Nuxt app
+# 5️⃣ Build your Nuxt ap
 RUN pnpm build
 
 # 6️⃣ Production image
