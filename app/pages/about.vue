@@ -1,6 +1,8 @@
 <script setup lang="ts">
 
 import Navbar from "~/components/app/Navbar.vue";
+import TestNavbar from "~/components/app/TestNavbar.vue";
+import Footer from "~/components/app/Footer.vue";
 
 definePageMeta({
   layout: 'about-page',
@@ -10,7 +12,7 @@ definePageMeta({
 <template>
   <main>
     <section class="bg-slate-800 text-white px-2">
-      <Navbar />
+      <TestNavbar />
         <h1 class="text-6xl font-bold text-center md:text-start mb-12 max-w-7xl mx-auto mt-18">About Us</h1>
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 justify-between items-center">
             <h3 class="text-2xl text-center md:text-start mb-8 pb-8 leading-relaxed">We are an NGO dedicated to justice reform and advocacy, crime prevention and support for vulnerable groups. We believe in building a world where everyone has the opportunity to thrive.</h3>
@@ -133,4 +135,5 @@ definePageMeta({
       </div>
     </section>
   </main>
+  <Footer />
 </template>

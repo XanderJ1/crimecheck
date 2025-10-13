@@ -15,6 +15,7 @@ export default defineEventHandler(async (event) => {
   // Ensure the amount is sent as a string/number as provided; caller is responsible for correct units per Paystack docs
   const payload = { email: body.email, amount: body.amount }
 
+  console.log(process.env.PAYSTACK_SECRET_KEY, payload)
   try {
     const res = await $fetch('https://api.paystack.co/transaction/initialize', {
       method: 'POST',

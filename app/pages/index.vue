@@ -3,6 +3,7 @@
 import TestimonialCard from "~/components/app/TestimonialCard.vue";
 import InitiativeCard from "~/components/app/InitiativeCard.vue";
 import Navbar from "~/components/app/Navbar.vue";
+import TestNavbar from "~/components/app/TestNavbar.vue";
 
 useHead({
   title: 'Crime Check Foundation Ghana | Justice Reform and Humanitarian Aid',
@@ -30,7 +31,7 @@ definePageMeta({
 <template>
   <header class="relative bg-[url('/assets/images/people.jpg')] bg-center bg-cover h-screen before:absolute before:inset-0 before:bg-[#584D4D]/50 before:z-0" role="banner">
     <div class="relative z-10">
-      <Navbar />
+      <TestNavbar />
     </div>
     <section class="flex max-w-7xl mx-auto mt-20" aria-labelledby="hero-heading">
       <div class="flex flex-col items-center gap-8 md:items-start md:ml-20">
@@ -88,20 +89,20 @@ definePageMeta({
 
         <div class="flex gap-4">
           <NuxtLink to="/donate" class="text-xl font-bold text-white border border-blue-600 rounded bg-blue-600 px-8 py-2">Donate</NuxtLink>
-          <NuxtLink to="/create" class="text-xl font-bold border border-green-600 text-white rounded bg-green-600 px-5 py-2">Learn more</NuxtLink>
+          <NuxtLink to="/projects" class="text-xl font-bold border border-green-600 text-white rounded bg-green-600 px-5 py-2">Learn more</NuxtLink>
         </div>
       </div>
     </div>
   </section>
 
-  <article class="flex flex-col md:flex-row max-w-7xl mx-auto mt-20 my-10 items-center gap-10 bg-linear-gradient">
-    <h2 class="text-xl text-center md:text-start">Trusted by leading human rights organizations</h2>
-    <div class="flex ml-8 gap-8">
-      <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/gcb.webp" class="w-15 h-15" alt="GCB partner" />
-      <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/osiwa.png" class="w-15 h-15" alt="OSIWA partner" />
-      <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/usaid.svg" class="w-15 h-15" alt="USAID partner" />
-    </div>
-  </article>
+    <article class="flex flex-col md:flex-row max-w-7xl mx-auto mt-20 my-10 items-center gap-10 bg-linear-gradient">
+      <h2 class="text-xl text-center md:text-start">Trusted by leading human rights organizations</h2>
+      <div class="flex ml-8 gap-8">
+        <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/gcb.webp" class="w-15 h-15" alt="GCB partner" />
+        <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/osiwa.png" class="w-15 h-15" alt="OSIWA partner" />
+        <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/usaid.svg" class="w-15 h-15" alt="USAID partner" />
+      </div>
+    </article>
 
   <section class="max-w-7xl mx-auto px-2 mt-20">
     <h2 class="text-4xl text-center md:text-start font-semibold mt-10">What others say about us</h2>
@@ -127,12 +128,12 @@ definePageMeta({
     </div>
   </section>
 
-  <article class="flex flex-col md:flex-row  relative justify-between items-center px-20 h-70 bg-[position:center_60%] bg-cover before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0 max-w-7xl mx-auto my-15 bg-[url('/assets/images/ai_inmate_behind_bars.jpg')]">
+  <article class="flex flex-col md:flex-row relative justify-between h-70 bg-[position:center_60%] bg-cover before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0 max-w-7xl mx-auto my-15 bg-[url('/assets/images/ai_inmate_behind_bars.jpg')]">
     <div>
       <h2 class="text-3xl mt-8 text-center md:text-start mb-5 font-bold text-white">Be a part the change  you seek</h2>
-      <p class="text-xl text-center text-white">Join Our mission to transform justice</p>
+      <p class="text-2xl text-center text-white">Join Our mission to transform justice</p>
     </div>
-    <button class="text-2xl mb-5 md:mb-0 h-fit px-4 py-3 rounded text-white bg-blue-600 border border-blue-600" to="/">Donate Now</button>
+    <button class="text-xl w-fit mx-auto mb-5 md:mb-0 h-fit px-4 py-3 rounded text-white bg-blue-600 border border-blue-600" to="/">Donate Now</button>
   </article>
 
   <section class="max-w-7xl px-2 mx-auto mt-20 mb-16">

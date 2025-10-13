@@ -36,7 +36,6 @@ function submit(e: Event) {
   e.preventDefault()
   const methodLabel = paymentMethod.value === 'momo' ? 'Mobile Money' : paymentMethod.value === 'card' ? 'Card' : 'Bank Transfer';
   router.push('/paystack-test')
-  // alert(`Thank you, ${form.name || 'Donor'}!\nDonation amount: ${form.amount ? 'GHS ' + form.amount : '—'}\nMethod: ${methodLabel}\n(Integrate a payment gateway in production.)`)
 }
 </script>
 

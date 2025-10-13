@@ -29,6 +29,9 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
+  css: {
+      devSourcemap: false,
+  },
   },
 
   prismic: {
