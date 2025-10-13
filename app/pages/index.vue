@@ -29,23 +29,23 @@ definePageMeta({
 </script>
 
 <template>
-  <header class="relative bg-[url('/assets/images/people.jpg')] bg-center bg-cover h-screen before:absolute before:inset-0 before:bg-[#584D4D]/50 before:z-0" role="banner">
+  <header class="relative bg-[url('/assets/images/people.jpg')] bg-center bg-cover h-screen before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0" role="banner">
     <div class="relative z-10">
       <TestNavbar />
     </div>
     <section class="flex max-w-7xl mx-auto mt-20" aria-labelledby="hero-heading">
       <div class="flex flex-col items-center gap-8 md:items-start md:ml-20">
-        <h1 id="hero-heading" class="main text-center md:text-start text-white font-bold font-sans text-3xl md:text-[60px] max-w-[530px]">
+        <h1 id="hero-heading" class="main z-10 text-center md:text-start text-white font-bold font-sans text-3xl md:text-[60px] max-w-[530px]">
           REINFORCING JUDICIAL PROTECTION FOR INMATES
         </h1>
 
-        <p class="text-white text-center max-w-[400px]">In the heart of Ghana we fight for those who are neglected by the system.
+        <p class="text-white text-center z-10 max-w-[400px]">In the heart of Ghana we fight for those who are neglected by the system.
           We provide justice for those who lack the means to fight for themselves.
         </p>
 
         <div class="flex gap-4">
-          <NuxtLink to="/donate" class="inline-flex items-center text-base md:text-xl text-white font-semibold px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">Donate</NuxtLink>
-          <NuxtLink to="/" class="inline-flex items-center text-base md:text-xl font-semibold px-5 py-3 rounded-lg border-2 border-green-600 text-white hover:bg-green-600/10 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition">Learn More</NuxtLink>
+          <NuxtLink to="/donate" class="z-10 inline-flex items-center text-base md:text-xl text-white font-semibold px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">Donate</NuxtLink>
+          <NuxtLink to="/" class="z-10 inline-flex items-center text-base md:text-xl font-semibold px-5 py-3 rounded-lg border-2 border-green-600 text-white hover:bg-green-600/10 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition">Learn More</NuxtLink>
         </div>
 
       </div>
@@ -128,12 +128,12 @@ definePageMeta({
     </div>
   </section>
 
-  <article class="flex flex-col md:flex-row relative justify-between h-70 bg-[position:center_60%] bg-cover before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0 max-w-7xl mx-auto my-15 bg-[url('/assets/images/ai_inmate_behind_bars.jpg')]">
+  <article class="flex flex-col md:flex-row items-center  md:px-16 justify-between h-70 bg-[position:center_60%] bg-cover before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0 max-w-7xl mx-auto my-15 bg-[url('/assets/images/ai_inmate_behind_bars.jpg')]">
     <div>
-      <h2 class="text-3xl mt-8 text-center md:text-start mb-5 font-bold text-white">Be a part the change  you seek</h2>
+      <h2 class="text-3xl  text-center md:text-start mb-5 font-bold text-white">Be a part the change  you seek</h2>
       <p class="text-2xl text-center text-white">Join Our mission to transform justice</p>
     </div>
-    <button class="text-xl w-fit mx-auto mb-5 md:mb-0 h-fit px-4 py-3 rounded text-white bg-blue-600 border border-blue-600" to="/">Donate Now</button>
+    <button class="text-xl w-fit mx-auto md:mx-0 mb-5 md:mb-0 h-fit px-4 py-3 rounded text-white bg-blue-600 border border-blue-600" to="/">Donate Now</button>
   </article>
 
   <section class="max-w-7xl px-2 mx-auto mt-20 mb-16">
