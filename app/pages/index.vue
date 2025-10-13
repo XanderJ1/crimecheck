@@ -29,23 +29,23 @@ definePageMeta({
 </script>
 
 <template>
-  <header class="relative bg-[url('/assets/images/people.jpg')] bg-center bg-cover h-screen before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0" role="banner">
+  <header class="relative bg-[url('/assets/images/kwarteng2.jpg')] bg-center bg-cover h-screen before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0" role="banner">
     <div class="relative z-10">
       <TestNavbar />
     </div>
     <section class="flex max-w-7xl mx-auto mt-20" aria-labelledby="hero-heading">
       <div class="flex flex-col items-center gap-8 md:items-start md:ml-20">
-        <h1 id="hero-heading" class="main z-10 text-center md:text-start text-white font-bold font-sans text-3xl md:text-[60px] max-w-[530px]">
+        <h1 id="hero-heading" class="main z-1 text-center md:text-start text-white font-bold font-sans text-3xl md:text-[60px] max-w-[530px]">
           REINFORCING JUDICIAL PROTECTION FOR INMATES
         </h1>
 
-        <p class="text-white text-center z-10 max-w-[400px]">In the heart of Ghana we fight for those who are neglected by the system.
+        <p class="text-white text-center z-1 max-w-[400px]">In the heart of Ghana we fight for those who are neglected by the system.
           We provide justice for those who lack the means to fight for themselves.
         </p>
 
         <div class="flex gap-4">
-          <NuxtLink to="/donate" class="z-10 inline-flex items-center text-base md:text-xl text-white font-semibold px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">Donate</NuxtLink>
-          <NuxtLink to="/" class="z-10 inline-flex items-center text-base md:text-xl font-semibold px-5 py-3 rounded-lg border-2 border-green-600 text-white hover:bg-green-600/10 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition">Learn More</NuxtLink>
+          <NuxtLink to="/donate" class="z-1 inline-flex items-center text-base md:text-xl text-white font-semibold px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">Donate</NuxtLink>
+          <NuxtLink to="/" class="z-1  inline-flex items-center text-base md:text-xl font-semibold px-5 py-3 rounded-lg border-2 border-green-600 text-white hover:bg-green-600/10 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition">Learn More</NuxtLink>
         </div>
 
       </div>

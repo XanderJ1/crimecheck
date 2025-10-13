@@ -17,7 +17,7 @@ const closeMobileMenu = () => {
 </script>
 
 <template>
-  <header class="mx-auto max-w-7xl px-4 flex items-center justify-between py-4">
+  <header class="mx-auto z-20 max-w-7xl px-4 flex items-center justify-between py-4">
     <!-- Logo -->
     <div>
       <NuxtLink to="/" class="font-bold text-white" @click="closeMobileMenu">
@@ -83,7 +83,7 @@ const closeMobileMenu = () => {
           </div>
 
           <!-- Mobile Menu Links -->
-          <div class="flex flex-col gap-1 p-4 flex-1">
+          <div class="flex z-15 flex-col gap-1 p-4 flex-1">
             <NuxtLink
                 to="/"
                 class="px-4 py-3 rounded-lg text-gray-900 font-semibold hover:bg-gray-100 transition-colors"

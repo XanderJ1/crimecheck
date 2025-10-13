@@ -134,7 +134,7 @@ async function initPayment(e: Event) {
                    placeholder="100" />
           </label>
 
-          <label>
+          <label class="flex flex-col">
             <span class="text-sm font-medium text-gray-700">Message (optional)</span>
             <textarea v-model="form.message" rows="3"
                       class="rounded-lg border-gray-300 bg-gray-50 px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-400"
