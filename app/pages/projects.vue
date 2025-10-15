@@ -52,7 +52,7 @@ import StoryCard from "~/components/app/StoryCard.vue";
 
       <AppStoryCard2
           title="CrimeCheck rescues Ama Animah  children"
-          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  rreleased after Crimecheck
+          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  released after Crimecheck
          listened to his story nd later"
           name="Ama Animah"
           image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
@@ -61,7 +61,7 @@ import StoryCard from "~/components/app/StoryCard.vue";
 
       <StoryCard
           title="CrimeCheck rescues Ama Animah  children"
-          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  rreleased after Crimecheck
+          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  released after Crimecheck
          listened to his story nd later"
           name="Ama Animah"
           image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/ama_animah.jpg"
@@ -69,7 +69,7 @@ import StoryCard from "~/components/app/StoryCard.vue";
 
       <AppStoryCard2
           title="CrimeCheck rescues Ama Animah  children"
-          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  rreleased after Crimecheck
+          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  released after Crimecheck
          listened to his story nd later"
           name="Ama Animah"
           image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
