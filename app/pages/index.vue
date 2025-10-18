@@ -39,7 +39,8 @@ definePageMeta({
           REINFORCING JUDICIAL PROTECTION FOR INMATES
         </h1>
 
-        <p class="text-white text-center z-1 max-w-[400px]">In the heart of Ghana we fight for those who are neglected by the system.
+        <p class="text-white text-center z-1 max-w-[400px]">
+          In the heart of Ghana we fight for those who are neglected by the system.
           We provide justice for those who lack the means to fight for themselves.
         </p>
 

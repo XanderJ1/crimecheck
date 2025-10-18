@@ -2,7 +2,21 @@
 import ProjectCard from "~/components/app/ProjectCard.vue";
 import StoryCard from "~/components/app/StoryCard.vue";
 
-
+useHead({
+  title: 'Projects & Impact | Crime Check Foundation Ghana',
+  meta: [
+    {
+      name: 'description',
+      content: 'Discover how Crime Check Foundation transforms lives through humanitarian support, justice reform advocacy, and digital justice tracking in Ghana.'
+    },
+    { property: 'og:title', content: 'Projects & Impact | Crime Check Foundation Ghana' },
+    { property: 'og:description', content: 'Explore CCF’s initiatives including humanitarian aid, vagrancy law reform, and the Justice Tracker project.' },
+    { property: 'og:type', content: 'website' }
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://crimecheckfoundation.org/projects' }
+  ]
+})
 </script>
 
 <template>

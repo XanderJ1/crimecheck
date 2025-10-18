@@ -4,6 +4,20 @@ import Navbar from "~/components/app/Navbar.vue";
 import TestNavbar from "~/components/app/TestNavbar.vue";
 import Footer from "~/components/app/Footer.vue";
 
+useHead({
+  title: 'About Us | Crime Check Foundation Ghana',
+  meta: [
+    { name: 'description', content: 'Learn about Crime Check Foundation, our story, mission, vision, and advocacy for justice reform and support for vulnerable groups in Ghana.' },
+    { property: 'og:title', content: 'About Crime Check Foundation' },
+    { property: 'og:description', content: 'Discover the story and values behind our fight for justice and compassion across Ghana.' },
+    { property: 'og:type', content: 'website' }
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://crimecheckfoundation.org/about' }
+  ]
+})
+
+
 definePageMeta({
   layout: 'about-page',
 })
@@ -109,7 +123,7 @@ definePageMeta({
       <h2 class="text-4xl mt-20 mb-8">Meet Our Founder</h2>
       <div class="flex flex-col md:flex-row gap-6 items-center">
         <img class="rounded-xl"   width="1200"  quality="100"
-                 height="800" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/ibrahim.jpeg" alt="" />
+                   height="800" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/ibrahim.jpeg" alt="" />
         <div class="flex flex-col gap-2">
           <h3 class="text-2xl mb-10">Ibrahim Oppong Kwarteng</h3>
           <h4 class="text-xl mb-4">Founder & Executive Director</h4>

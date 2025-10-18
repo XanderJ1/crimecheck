@@ -16,7 +16,7 @@ const props = defineProps({
         </div>
         <nav class="flex items-center  text-xl gap-8" :class="color ? 'text-black' : 'text-white'">
           <NuxtLink to="/" class="font-bold hidden md:block">Home</NuxtLink>
-          <NuxtLink to="/projects" class="font-bold hidden md:block">Projects</NuxtLink>
+          <NuxtLink to="/projects" clas s="font-bold hidden md:block">Projects</NuxtLink>
           <NuxtLink to="/about" class="font-bold hidden md:block">About Us</NuxtLink>
           <NuxtLink to="/events" class="font-bold hidden md:block">Events</NuxtLink>
             <ul class="flex gap-4">

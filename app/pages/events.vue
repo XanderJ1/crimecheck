@@ -1,14 +1,47 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Events | Crime Check Foundation Ghana',
+  title: 'Events & Outreach | Crime Check Foundation Ghana',
   meta: [
-    { name: 'description', content: 'Explore upcoming and past Crime Check Foundation events, outreach, and advocacy programs across Ghana.' },
-    { property: 'og:title', content: 'Events | Crime Check Foundation' },
-    { property: 'og:description', content: 'Join our upcoming events and see highlights from past programs and campaigns.' },
-    { property: 'og:type', content: 'website' }
-  ]
+    {
+      name: 'description',
+      content: 'Discover upcoming and past events by Crime Check Foundation Ghana, including justice advocacy, humanitarian aid, and prison reform programs.',
+    },
+    { name: 'keywords', content: 'Crime Check Foundation, Ghana, justice reform events, humanitarian outreach, prison reform Ghana, vagrancy law forums' },
+    { property: 'og:title', content: 'Events & Outreach | Crime Check Foundation Ghana' },
+    { property: 'og:description', content: 'Join Crime Check Foundation events driving justice reform and humanitarian impact across Ghana.' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'robots', content: 'index, follow' },
+
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://crimecheckfoundation.org/events' }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Crime Check Foundation Events",
+        "description": "Justice reform, humanitarian outreach, and advocacy programs organized by Crime Check Foundation across Ghana.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "Crime Check Foundation",
+          "url": "https://crimecheckfoundation.org"
+        },
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Various locations across Ghana"
+        }
+      }),
+    },
+  ],
 })
+
 
 definePageMeta({
   layout: 'default',
