@@ -142,7 +142,7 @@ definePageMeta({
     <div class="flex flex-col gap-4 md:flex-row">
       <InitiativeCard
         title="Prison reforms"
-        description="Challenging laws that criminalize poverty and further marginalize the vulnerable communities"
+        description="Improving prison conditions to challenge the status quo about incarceration as a for of punishment."
         icon="/images/reform.svg"
       />
       <InitiativeCard
@@ -152,12 +152,12 @@ definePageMeta({
       />
       <InitiativeCard
           title="Justice Advocacy"
-          description="Challenging laws that criminalize poverty and further marginalize the vulnerable communities"
+          description="Driving a change in criminal justice and championing a fairer system to transform lives"
           icon="/images/scale.svg"
       />
       <InitiativeCard
           title="Humanitarian Support"
-          description="Challenging laws that criminalize poverty and further marginalize the vulnerable communities"
+          description="Empowering lives through generous giving"
           icon="/images/globe.svg"
       />
 
