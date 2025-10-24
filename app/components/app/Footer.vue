@@ -46,8 +46,8 @@
         <div>
           <h3 class="text-lg font-semibold mb-6">Get in touch</h3>
           <div class="space-y-4 text-slate-400 text-sm">
-            <p>+233 247 830 746</p>
-            <p>info@crimecheckfoundation.org</p>
+            <a href="tel:+233242074276">+233 242 074 276</a>
+            <p>info@crimecheckfoundationgh.org</p>
             <p>Old barrier, Kasoa</p>
           </div>
         </div>
