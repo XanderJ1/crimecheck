@@ -14,7 +14,7 @@ useHead({
     { property: 'og:type', content: 'website' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://crimecheckfoundation.org/projects' }
+    { rel: 'canonical', href: 'https://crimecheckfoundationgh.org/projects' }
   ]
 })
 </script>

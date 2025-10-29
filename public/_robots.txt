@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://crimecheckfoundation.org/sitemap.xml
+Sitemap: https://crimecheckfoundationgh.org/sitemap.xml

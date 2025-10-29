@@ -16,7 +16,7 @@ useHead({
 
   ],
   link: [
-    { rel: 'canonical', href: 'https://crimecheckfoundation.org/events' }
+    { rel: 'canonical', href: 'https://crimecheckfoundationgh.org/events' }
   ],
   script: [
     {
@@ -29,7 +29,7 @@ useHead({
         "organizer": {
           "@type": "Organization",
           "name": "Crime Check Foundation",
-          "url": "https://crimecheckfoundation.org"
+          "url": "https://crimecheckfoundationgh.org"
         },
         "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
         "eventStatus": "https://schema.org/EventScheduled",

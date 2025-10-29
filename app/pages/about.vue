@@ -13,7 +13,7 @@ useHead({
     { property: 'og:type', content: 'website' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://crimecheckfoundation.org/about' }
+    { rel: 'canonical', href: 'https://crimecheckfoundationgh.org/about' }
   ]
 })
 
