@@ -42,7 +42,6 @@ useHead({
     <h3 class="text-2xl" >Prison Projects</h3>
     <div class="flex items-center justify-between">
       <div class="basis-1/2">
-        <h3 class="text-2xl font-bold mb-4 text-gray-900">Prison Projects</h3>
         <p class="font-semibold mb-3 text-gray-800">Petty Offenders Project</p>
         <p class="text-gray-700 mb-4">
           This initiative secures the release of individuals imprisoned for minor offenses
