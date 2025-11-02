@@ -47,6 +47,23 @@ definePageMeta({
   layout: 'default',
 })
 
+
+const prismic = usePrismic();
+const { data: events } = await useAsyncData('event', async () => {
+  const docs = await prismic.client.getAllByType('event')
+  return docs.map((doc) => ({
+    id: doc.id,
+    title: doc.data.title,
+    description: doc.data.description,
+    date: doc.data.date,
+    location: doc.data.location,
+    image: doc.data.image,
+  }))
+})
+
+console.log(events.value);
+
+
 // Simple in-page data for demonstration purposes.
 // Replace with API data or content files when integrating a backend/CMS.
 interface EventItem {
@@ -61,7 +78,7 @@ interface EventItem {
 
 const today = new Date()
 
-const events = ref<EventItem[]>([
+const eventss = ref<EventItem[]>([
   {
     id: 1,
     title: 'Legal Aid Outreach – Kumasi Central Prison',
@@ -69,7 +86,6 @@ const events = ref<EventItem[]>([
     location: 'Kumasi, Ashanti Region',
     image: 'https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/prisoners.jpg',
     description: 'Free legal screening and support for remand prisoners, including documentation and case follow-ups.',
-    cta: { label: 'Volunteer', to: '/donate' }
   },
   {
     id: 2,
@@ -78,7 +94,6 @@ const events = ref<EventItem[]>([
     location: 'Cape Coast, Central Region',
     image: 'https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/donate.jpeg',
     description: 'Public dialogue on the impact of vagrancy laws and pathways to reform with local leaders and citizens.',
-    cta: { label: 'RSVP', to: '/donate' }
   },
   {
     id: 3,
@@ -90,12 +105,11 @@ const events = ref<EventItem[]>([
   },
   {
     id: 5,
-    title: 'Legal Aid Outreach – Kumasi Central Prison',
+    title: 'A Visit to Nsawam Prison',
     date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 14).toISOString(),
-    location: 'Kumasi, Ashanti Region',
+    location: 'Nsawam, Eastern Region',
     image: 'https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/prisoners.jpg',
-    description: 'Free legal screening and support for remand prisoners, including documentation and case follow-ups.',
-    cta: { label: 'Volunteer', to: '/donate' }
+    description: 'An educational visit to Nsawam Prison to understand the rehabilitation process and engage with inmates on their reintegration journey.',
   }
 ])
 
@@ -140,15 +154,14 @@ function fmt(d: string) {
 
           <div v-if="upcoming.length" class="grid sm:grid-cols-3 gap-6">
             <article v-for="event in upcoming" :key="event.id" class="bg-white/90 backdrop-blur rounded-2xl shadow-lg ring-1 ring-gray-200 overflow-hidden">
-              <NuxtImg v-if="event.image" :src="event.image" alt="" class="h-40 w-full object-cover" />
+              <NuxtImg v-if="event.image" :src="event.image.url" alt="" class="h-40 w-full object-cover" />
               <div class="p-5 flex flex-col gap-2">
                 <h3 class="text-lg font-bold text-gray-900">{{ event.title }}</h3>
                 <p class="text-sm text-gray-600">{{ fmt(event.date) }} • {{ event.location }}</p>
                 <p class="text-gray-700 text-sm mt-1">{{ event.description }}</p>
                 <div class="mt-3">
-                  <NuxtLink v-if="event.cta" :to="event.cta.to" class="inline-flex items-center gap-2 text-sm font-semibold px-3 py-2 rounded-lg bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                    <i class="pi pi-calendar-plus text-xs"></i>
-                    {{ event.cta.label }}
+                  <NuxtLink to="/about" class="flex justify-center  gap-2 text-sm font-semibold px-3 py-2 rounded-lg bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <h4 class="">Learn More</h4>
                   </NuxtLink>
                 </div>
               </div>
@@ -164,10 +177,10 @@ function fmt(d: string) {
         <h2 id="past-heading" class="text-xl font-semibold text-gray-900">Past Events</h2>
         <div v-if="past.length" class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <article v-for="event in past" :key="event.id" class="bg-white rounded-xl shadow ring-1 ring-gray-200 overflow-hidden">
-            <NuxtImg v-if="event.image" :src="event.image" alt="" class="h-36 w-full object-cover" />
+            <NuxtImg v-if="event.image" :src="event.image.url" alt="" class="h-36 w-full object-cover" />
             <div class="p-4">
               <h3 class="font-semibold text-gray-900">{{ event.title }}</h3>
-              <p class="text-sm text-gray-600">{{ fmt(event.date) }} • {{ event.location }}</p>
+              <p class="text-sm text-gray-600">{{ (event.date) }} • {{ event.location }}</p>
               <p class="text-sm text-gray-700 mt-1 line-clamp-3">{{ event.description }}</p>
             </div>
           </article>

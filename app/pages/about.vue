@@ -34,7 +34,7 @@ definePageMeta({
     </section>
     <div class="px-2">
         <h2 class="text-5xl max-w-7xl mx-auto text-left mt-20  mb-8 ">Our Story</h2>
-        <p class="text max-w-7xl mx-auto space-y-4 text-slate-600 text-lg leading-relaxed">CrimeCheck Foundation was born from a vision to transform how communities address crime and justice. We recognized that traditional approaches often fail the most vulnerable, and that lasting change requires both grassroots engagement and systemic reform. Our journey began with a simple belief: that everyone deserves safety, dignity, and the chance to build a better future. Today, we work across multiple fronts—from direct support services to policy advocacy—always keeping the needs of vulnerable populations at the heart of everything we do.</p>
+        <p class="text max-w-7xl mx-auto space-y-4 text-slate-600 text-lg leading-relaxed">Crime Check Foundation was born from a vision to transform how communities address crime and justice. We recognized that traditional approaches often fail the most vulnerable, and that lasting change requires both grassroots engagement and systemic reform. Our journey began with a simple belief: that everyone deserves safety, dignity, and the chance to build a better future. Today, we work across multiple fronts—from direct support services to policy advocacy—always keeping the needs of vulnerable populations at the heart of everything we do.</p>
     </div>
 
     <section class="max-w-7xl px-2 mx-auto">
@@ -76,7 +76,7 @@ definePageMeta({
             <div class="flex-1 bg-white rounded-lg shadow p-6 -mt-1">
               <p class="text-sm text-gray-500 mb-2">2015</p>
               <h3 class="text-lg font-semibold mb-3">Foundation Established</h3>
-              <p class="text-gray-600 leading-relaxed">CrimeCheck Foundation was founded with a mission to support vulnerable groups affected by crime.</p>
+              <p class="text-gray-600 leading-relaxed">Crime CheckFoundation was founded with a mission to support vulnerable groups affected by crime.</p>
             </div>
           </div>
 
@@ -94,7 +94,7 @@ definePageMeta({
             <div class="flex-1 bg-white rounded-lg shadow p-6 -mt-1">
               <p class="text-sm text-gray-500 mb-2">2019</p>
               <h3 class="text-lg font-semibold mb-3">Our Launch of prisoners interview</h3>
-              <p class="text-gray-600 leading-relaxed">CrimeCheck Foundation started going to prisons and interviewing inmates about their life stories.</p>
+              <p class="text-gray-600 leading-relaxed">Crime CheckFoundation started going to prisons and interviewing inmates about their life stories.</p>
             </div>
           </div>
 
@@ -103,7 +103,7 @@ definePageMeta({
             <div class="flex-1 bg-white rounded-lg shadow p-6 -mt-1">
               <p class="text-sm text-gray-500 mb-2">2023</p>
               <h3 class="text-lg font-semibold mb-3">Justice Reform Advocacy</h3>
-              <p class="text-gray-600 leading-relaxed">CrimeCheck Foundation was founded with a mission to support vulnerable groups affected by crime.</p>
+              <p class="text-gray-600 leading-relaxed">Crime CheckFoundation was founded with a mission to support vulnerable groups affected by crime.</p>
             </div>
           </div>
 
@@ -112,7 +112,7 @@ definePageMeta({
             <div class="flex-1 bg-white rounded-lg shadow p-6 -mt-1">
               <p class="text-sm text-gray-500 mb-2">2023</p>
               <h3 class="text-lg font-semibold mb-3">Justice Reform Advocacy</h3>
-              <p class="text-gray-600 leading-relaxed">CrimeCheck Foundation was founded with a mission to support vulnerable groups affected by crime.</p>
+              <p class="text-gray-600 leading-relaxed">Crime CheckFoundation was founded with a mission to support vulnerable groups affected by crime.</p>
             </div>
           </div>
         </div>
@@ -128,8 +128,8 @@ definePageMeta({
           <h3 class="text-2xl mb-10">Ibrahim Oppong Kwarteng</h3>
           <h4 class="text-xl mb-4">Founder & Executive Director</h4>
           <p class="leading-6">
-            Ibrahim Oppong Kwarteng founded CrimeCheck Foundation with a deep commitment to social justice and community
-            empowerment. With extensive experience in criminology, social work, and advocacy, Ibrahim has dedicated their career to creating systemic change and supporting those affected by crime. His leadership has made and transformed CrimeCheck into a leading voice for justice reform and community safety.
+            Ibrahim Oppong Kwarteng founded Crime CheckFoundation with a deep commitment to social justice and community
+            empowerment. With extensive experience in criminology, social work, and advocacy, Ibrahim has dedicated their career to creating systemic change and supporting those affected by crime. His leadership has made and transformed Crime Checkinto a leading voice for justice reform and community safety.
           </p>
         </div>
       </div>
@@ -144,7 +144,7 @@ definePageMeta({
             <div class="bg-blue- border h-2 w-2 border-blue-600 bg-blue-600 p-2 rounded-full"></div>
             <h3 class="text-xl font-bold">2018</h3>
           </div>
-          <p>CrimeCheck was recognized as the most reputable voice in the fight  for crime justice  in Ghana </p>
+          <p>Crime Checkwas recognized as the most reputable voice in the fight  for crime justice  in Ghana </p>
         </div>
       </div>
     </section>

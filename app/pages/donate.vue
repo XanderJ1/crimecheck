@@ -166,17 +166,23 @@ async function initPayment(e: Event) {
           <ul class="space-y-2 text-gray-700">
             <li>
               <span class="block text-sm text-gray-500">Bank Transfer</span>
-              <span class="font-medium">GCB Bank</span><br />
+              <span class="font-medium">ADB Bank</span><br />
               <span class="text-sm">Acc: Crime Check Foundation</span><br />
-              <span class="text-sm">Acc No: 00-0000000</span>
+              <span class="text-sm">Branch : Lapaz branch</span><br />
+
+              <span class="text-sm">Acc No: 1141010138774101</span>
             </li>
             <li>
               <span class="block text-sm text-gray-500">Mobile Money</span>
-              <span class="font-medium">MTN MoMo — 024 XXX XXXX</span>
+              <span class="font-medium">MTN MoMo - 0248895381</span><br />
+
+              <span class="font-medium">MTN MoMo — 0242074276</span>
             </li>
             <li>
               <span class="block text-sm text-gray-500">In-kind donations</span>
-              <span>Contact us for pickup arrangements.</span>
+              <span>Contact us for arrangements.</span><br />
+              <span class="font-medium">0242074276 </span>
+
             </li>
           </ul>
         </aside>

@@ -70,11 +70,11 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 /**
- * Content for Event documents
+ * Content for Events documents
  */
 interface EventDocumentData {
   /**
-   * Title field in *Event*
+   * Title field in *Events*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Title
@@ -85,7 +85,7 @@ interface EventDocumentData {
   title: prismic.KeyTextField;
 
   /**
-   * Date field in *Event*
+   * Date field in *Events*
    *
    * - **Field Type**: Date
    * - **Placeholder**: Date
@@ -96,7 +96,7 @@ interface EventDocumentData {
   date: prismic.DateField;
 
   /**
-   * Location field in *Event*
+   * Location field in *Events*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Location
@@ -107,7 +107,7 @@ interface EventDocumentData {
   location: prismic.KeyTextField;
 
   /**
-   * Description field in *Event*
+   * Description field in *Events*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Description
@@ -118,7 +118,7 @@ interface EventDocumentData {
   description: prismic.KeyTextField;
 
   /**
-   * image field in *Event*
+   * image field in *Events*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -130,7 +130,7 @@ interface EventDocumentData {
 }
 
 /**
- * Event document from Prismic
+ * Events document from Prismic
  *
  * - **API ID**: `event`
  * - **Repeatable**: `true`

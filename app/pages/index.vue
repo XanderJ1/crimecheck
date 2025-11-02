@@ -61,14 +61,16 @@ definePageMeta({
     <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 gap-20">
       <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/donate_prisons.jpg" class="w-xl" alt="prisoners" />
       <div class="right flex flex-col gap-8 justify-center">
+
         <div class="flex flex-col gap-2">
           <div class="flex items-center gap-2">
-            <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/icon_love.svg" class="h-10 w-15" alt="humanitarian support" />
-            <h3 class="text-xl font-bold">Human Support</h3>
+            <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/icon_love.svg" class="h-10 w-15" alt="care_icon" />
+            <h3 class="text-xl font-bold">Prison Support</h3>
           </div>
-          <p>Transforming lives through strategic legal interventions and humanitarian support </p>
+          <p>Providing rehabilitation programs and resources for incarcerated individuals seeking redemption.</p>
 
         </div>
+
 
         <div class="flex flex-col gap-2">
           <div class="flex items-center gap-2">
@@ -81,10 +83,10 @@ definePageMeta({
 
         <div class="flex flex-col gap-2">
           <div class="flex items-center gap-2">
-            <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/icon_love.svg" class="h-10 w-15" alt="care_icon" />
-            <h3 class="text-xl font-bold">Prison Support</h3>
+            <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/icon_love.svg" class="h-10 w-15" alt="humanitarian support" />
+            <h3 class="text-xl font-bold">Philanthropy</h3>
           </div>
-          <p>Providing rehabilitation programs and resources for incarcerated individuals seeking redemption.</p>
+          <p>Transforming lives through strategic legal interventions and humanitarian support </p>
 
         </div>
 
@@ -99,7 +101,6 @@ definePageMeta({
     <article class="flex flex-col md:flex-row max-w-7xl mx-auto mt-20 my-10 items-center gap-10 bg-linear-gradient">
       <h2 class="text-xl text-center md:text-start">Trusted by leading human rights organizations</h2>
       <div class="flex ml-8 gap-8">
-        <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/gcb.webp" class="w-15 h-15" alt="GCB partner" />
         <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/osiwa.png" class="w-15 h-15" alt="OSIWA partner" />
         <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/usaid.svg" class="w-15 h-15" alt="USAID partner" />
       </div>
@@ -146,7 +147,7 @@ definePageMeta({
         icon="/images/reform.svg"
       />
       <InitiativeCard
-          title="Vagrancy Law"
+          title="Decriminalizing Vagrancy Laws"
           description="Challenging laws that criminalize poverty and further marginalize the vulnerable communities"
           icon="/images/book.svg"
       />
@@ -156,7 +157,7 @@ definePageMeta({
           icon="/images/scale.svg"
       />
       <InitiativeCard
-          title="Humanitarian Support"
+          title="Philanthropy"
           description="Empowering lives through generous giving"
           icon="/images/globe.svg"
       />

@@ -119,7 +119,7 @@
     <div class="border-t border-slate-800">
       <div class="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-slate-500 text-sm">
-          ©2025 CrimeCheck Foundation. All rights reserved.
+          ©2025 Crime CheckFoundation. All rights reserved.
         </p>
         <div class="flex flex-col md:flex-row gap-6 md:gap-8">
           <NuxtLink to="#" class="text-slate-500 hover:text-white transition-colors text-sm">
