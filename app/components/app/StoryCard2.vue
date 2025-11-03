@@ -15,7 +15,6 @@ const props = defineProps({
       <div class="flex flex-col md:ml-15 gap-4">
       <h3 class="font-bold text-xl mb-4 mt-2">{{ title }}</h3>
       <p>{{story}}</p>
-      <h4 class="font-semibold"> - {{ name }}</h4>
     </div>
 
   </div>

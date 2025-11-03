@@ -56,13 +56,13 @@ useHead({
 
       </div>
       <div class="basis-1/2">
-        <img src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/support.jpg" alt="" />
+        <img class="w-150 h-100" src="/images/inmate_gift.png" alt="" />
       </div>
     </div>
 
 
-    <h3 class="text-2xl ">Philanthropy </h3>
-    <div class="flex items-center justify-between">
+    <h3 class="text-2xl">Philanthropy </h3>
+    <div class="flex flex-col md:flex-row items-center gap-4 justify-between mb-12">
       <div class="basis-1/2">
 
         <p class="font-semibold mb-3 text-gray-800">Street Charity Series</p>
@@ -88,22 +88,15 @@ useHead({
       </div>
 
       <div class="basis-1/2">
-        <img src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/support.jpg" alt="" />
+        <img src="/images/phil.jpg" class="w-150 h-120" alt="" />
       </div>
     </div>
 
-
-
-    <ProjectCard
-        title="Humanitarian Support"
-        description="Crime Check Foundation extends compassion to society’s most vulnerable.
-     Through donations and outreach, the Foundation supports ex-prisoners, widows, orphans, the sick, and the poor—providing medical care, education, and livelihood assistance. CCF’s humanitarian work restores dignity and hope to those often forgotten."
-        image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/support.jpg"  />
     <ProjectCard
         title="Decriminalizing Vagrancy Laws"
         description="In partnership with key stakeholders, CCF leads the Decriminalizing Vagrancy Laws and Advocacy Project (DVLA) to protect poor and homeless Ghanaians from unjust arrests under outdated local by-laws. The initiative promotes legal awareness, policy reform,
         and social inclusion, helping citizens live freely without fear of criminalization for poverty-related offenses."
-        image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/vagrant.jpg" reverse />
+        image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images2/vagrant.jpg" reverse />
     <ProjectCard title="Justice Tracker" description="CCF partners with USAID and Ghana’s justice institutions to implement the Case Tracking System (CTS)—a digital platform that monitors criminal cases from arrest to trial and beyond. The project enhances transparency, accountability, and timely justice
     while empowering citizens to monitor and demand fair treatment within the justice process."
                  image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/justice_hammer.jpg" />
@@ -113,36 +106,29 @@ useHead({
     <h2 class="flex flex-col text-3xl md:text-4xl text-center gap-10 mb-16">Real Stories Of Transformation</h2>
     <div class="flex flex-col px-3 gap-8">
       <StoryCard
-          title="Crime Checkrescues Ama Animah  children"
-          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  released after Crimecheck
-         listened to his story nd later"
-          name="Ama Animah"
-          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
+          title="Crime Check rescues Ama Animah"
+          story="A pregnant young woman at Nsawam Female Prison was sentenced to two years for assault after defending herself in a domestic altercation. Her husband brought another woman into their home, leading to a confrontation where she struck the woman with a sandal. Now in prison with her toddler and expecting another child, she has received no support from her husband."
+          image="/images/wom.jpg"
       />
 
       <AppStoryCard2
-          title="Crime Check rescues Ama Animah  children"
-          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  released after Crimecheck
-         listened to his story nd later"
-          name="Ama Animah"
-          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
+          title="CCF Funds Surgery for Man Battling Severe Gum Tumour"
+          story="Crime Check Foundation extends a small but life-saving lifeline to 30-year-old Daniel Ameyaw, who has been battling a severe gum tumour. Through its Health Check initiative and the generosity of donors, CCF contributed GH¢6,500 to help begin his surgery, offering him renewed hope for recovery and a better life."
+          image="/images/goit.jpg"
           reverse
       />
 
       <StoryCard
-          title="Crime Check rescues Ama Animah  children"
-          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  released after Crimecheck
-         listened to his story nd later"
-          name="Ama Animah"
-          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/ama_animah.jpg"
+          title="CCF Supports Acid Victim"
+          story="Crime Check Foundation (CCF) supported Memuna Malik, a 31-year-old woman from Akyem Oda who suffered severe burns after an acid attack. CCF donated GH₵4,000 to help with her medical treatment and recovery. Through this support, CCF restored hope and dignity to Memuna, reflecting its commitment to helping victims of injustice and hardship rebuild their lives."
+          image="/images/acid.jpg"
       />
 
       <AppStoryCard2
-          title="Crime Check rescues Ama Animah  children"
-          story="A teacher who was not given access to lawyers  wrongfully incarcerated was  released after Crimecheck
-         listened to his story nd later"
-          name="Ama Animah"
-          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
+          title="Man Saved By CCF "
+          story="A dedicated teacher was jailed for failing to pay a court fine he didn’t fully understand. CCF intervened, settled the fine, and helped him return to his students. With mentorship from the Foundation,
+           he now advocates for fair sentencing and helps identify others unjustly imprisoned for petty offenses.r"
+            image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
           reverse
       />
 

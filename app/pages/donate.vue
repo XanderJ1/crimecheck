@@ -176,7 +176,7 @@ async function initPayment(e: Event) {
               <span class="block text-sm text-gray-500">Mobile Money</span>
               <span class="font-medium">MTN MoMo - 0248895381</span><br />
 
-              <span class="font-medium">MTN MoMo — 0242074276</span>
+              <span class="font-medium">MTN MoMo - 0242074276</span>
             </li>
             <li>
               <span class="block text-sm text-gray-500">In-kind donations</span>

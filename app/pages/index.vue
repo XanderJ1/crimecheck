@@ -103,6 +103,7 @@ definePageMeta({
       <div class="flex ml-8 gap-8">
         <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/osiwa.png" class="w-15 h-15" alt="OSIWA partner" />
         <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/usaid.svg" class="w-15 h-15" alt="USAID partner" />
+        <img src="/images/UNODC.png" class="w-15 h-15" alt="USAID partner" />
       </div>
     </article>
 

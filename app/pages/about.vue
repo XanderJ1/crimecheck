@@ -60,77 +60,107 @@ definePageMeta({
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4">
-      <h2 class="text-4xl font-bold mt-20 mb-12">Timeline</h2>
+    <section class="max-w-7xl mx-auto px-4 py-20">
+      <h2 class="text-4xl font-bold text-center mb-16">Our Journey</h2>
       <div class="relative">
         <!-- Vertical line -->
         <div class="absolute left-[7px] top-0 bottom-0 w-0.5 bg-gray-300"></div>
 
-        <!-- Timeline items -->
-        <div class="space-y-8">
+        <div class="space-y-10">
+          <!-- 2015 -->
           <div class="relative flex gap-6">
-            <!-- Green dot -->
-            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-500 mt-1"></div>
-
-            <!-- Content card -->
-            <div class="flex-1 bg-white rounded-lg shadow p-6 -mt-1">
+            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-600 mt-1"></div>
+            <div class="flex-1 bg-white rounded-xl shadow p-6">
               <p class="text-sm text-gray-500 mb-2">2015</p>
-              <h3 class="text-lg font-semibold mb-3">Foundation Established</h3>
-              <p class="text-gray-600 leading-relaxed">Crime CheckFoundation was founded with a mission to support vulnerable groups affected by crime.</p>
+              <h3 class="text-xl font-semibold mb-3">Foundation Established</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Crime Check Foundation (CCF) was founded by Ibrahim Oppong Kwarteng to advocate for justice reform, support marginalized individuals, especially prisoners, petty offenders and the underprivileged.
+              </p>
             </div>
           </div>
 
+          <!-- 2017 -->
           <div class="relative flex gap-6">
-            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-500 mt-1"></div>
-            <div class="flex-1 bg-white rounded-lg shadow p-6 -mt-1">
+            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-600 mt-1"></div>
+            <div class="flex-1 bg-white rounded-xl shadow p-6">
               <p class="text-sm text-gray-500 mb-2">2017</p>
-              <h3 class="text-lg font-semibold mb-3">First Community Program</h3>
-              <p class="text-gray-600 leading-relaxed">Launched our first crime prevention workshop series, reaching over 500 community members.</p>
+              <h3 class="text-xl font-semibold mb-3">Petty Offenders Project</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Launched the <strong>Petty Offenders Project</strong>, which raises funds to secure the release of prisoners jailed for minor offences.
+              </p>
             </div>
           </div>
 
+          <!-- 2019 -->
           <div class="relative flex gap-6">
-            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-500 mt-1"></div>
-            <div class="flex-1 bg-white rounded-lg shadow p-6 -mt-1">
+            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-600 mt-1"></div>
+            <div class="flex-1 bg-white rounded-xl shadow p-6">
               <p class="text-sm text-gray-500 mb-2">2019</p>
-              <h3 class="text-lg font-semibold mb-3">Our Launch of prisoners interview</h3>
-              <p class="text-gray-600 leading-relaxed">Crime CheckFoundation started going to prisons and interviewing inmates about their life stories.</p>
+              <h3 class="text-xl font-semibold mb-3">Life in Prison Series</h3>
+              <p class="text-gray-700 leading-relaxed">
+                CCF launched the <strong>Life in Prison</strong> documentary series, sharing raw stories of inmates across Ghana. The series highlights flaws in the justice system and has become a national voice for prison reform.
+              </p>
             </div>
           </div>
 
+          <!-- 2021 -->
           <div class="relative flex gap-6">
-            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-500 mt-1"></div>
-            <div class="flex-1 bg-white rounded-lg shadow p-6 -mt-1">
-              <p class="text-sm text-gray-500 mb-2">2023</p>
-              <h3 class="text-lg font-semibold mb-3">Justice Reform Advocacy</h3>
-              <p class="text-gray-600 leading-relaxed">Crime CheckFoundation was founded with a mission to support vulnerable groups affected by crime.</p>
+            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-600 mt-1"></div>
+            <div class="flex-1 bg-white rounded-xl shadow p-6">
+              <p class="text-sm text-gray-500 mb-2">2021</p>
+              <h3 class="text-xl font-semibold mb-3">Health Check Series</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Under its <strong>Health Check</strong> program, CCF provides medical aid to patients who cannot not afford treatment — including life-saving surgeries for cancer and tumour victims.
+              </p>
             </div>
           </div>
 
+          <!-- 2023 -->
           <div class="relative flex gap-6">
-            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-500 mt-1"></div>
-            <div class="flex-1 bg-white rounded-lg shadow p-6 -mt-1">
+            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-600 mt-1"></div>
+            <div class="flex-1 bg-white rounded-xl shadow p-6">
               <p class="text-sm text-gray-500 mb-2">2023</p>
-              <h3 class="text-lg font-semibold mb-3">Justice Reform Advocacy</h3>
-              <p class="text-gray-600 leading-relaxed">Crime CheckFoundation was founded with a mission to support vulnerable groups affected by crime.</p>
+              <h3 class="text-xl font-semibold mb-3">Justice Reform Advocacy</h3>
+              <p class="text-gray-700 leading-relaxed">
+                CCF intensified advocacy for the <strong>Alternative Sentencing Bill</strong> and justice reforms to replace short prison terms for minor crimes with community service — promoting fairness and rehabilitation.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="relative flex gap-6">
+            <div class="relative z-10 flex-shrink-0 w-4 h-4 rounded-full bg-green-600 mt-1"></div>
+            <div class="flex-1 bg-white rounded-xl shadow p-6">
+              <p class="text-sm text-gray-500 mb-2">2025</p>
+              <h3 class="text-xl font-semibold mb-3">Digital Awareness & Global Reach</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Today, Crime Check Foundation continues to expand through digital media and international partnerships, amplifying the voices of the vulnerable and inspiring global action for justice and compassion.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+
     <section class="max-w-7xl px-2 mx-auto items-center mt-20 mb-16">
       <h2 class="text-4xl mt-20 mb-8">Meet Our Founder</h2>
       <div class="flex flex-col md:flex-row gap-6 items-center">
-        <img class="rounded-xl"   width="1200"  quality="100"
-                   height="800" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/ibrahim.jpeg" alt="" />
-        <div class="flex flex-col gap-2">
+        <img class="rounded-xl h-150  md:basis-1/2"   width="1200" src="/images/oppong2.jpg" alt="" />
+        <div class="flex flex-col gap-2  md:basis-1/2">
           <h3 class="text-2xl mb-10">Ibrahim Oppong Kwarteng</h3>
           <h4 class="text-xl mb-4">Founder & Executive Director</h4>
-          <p class="leading-6">
-            Ibrahim Oppong Kwarteng founded Crime CheckFoundation with a deep commitment to social justice and community
-            empowerment. With extensive experience in criminology, social work, and advocacy, Ibrahim has dedicated their career to creating systemic change and supporting those affected by crime. His leadership has made and transformed Crime Checkinto a leading voice for justice reform and community safety.
+          Ibrahim Oppong Kwarteng, the Executive Director of Crime Check Foundation, CCF is a journalist with the Ghana Broadcasting Corporation, GBC. He is also the Ambassador Extraordinaire of Ghana Prisons - a position conferred on him by the Prisons Service Council in 2015, and the award presented to him by His Excellency, President John Dramani Mahama.
+          He holds a Bachelor's Degree in English from the University of Cape Coast, a Master's Degree in English from the University of Ghana, and a Master's Degree in International Journalism from Brunel University, London as a Chevening Scholar.
+          Mr Kwarteng recently completed his PhD in Migration Studies at the University of Ghana, Legon.
+          <p>Through his Crime Check Foundation, CCF has brought monumental changes in Ghana's Criminal Justice System by releasing hundreds of prisoners under the Foundation's Petty Offenders Project and re-integrated most of them into society under the organization's Ex-convict Reintegration Project.
           </p>
+          <p>The Foundation's Health Check Series, General Charity Series, Educational Support Series, Street and Village Charity Series and the establishment of Meena Breast Cancer Foundation have brought immense relief to the poor, the needy and the vulnerable across Ghana.
+          </p>
+          <p>
+          His advocacy for the passage of the Non-Custodial Sentencing and the Narcotics Control Commission Bills into law and other human rights interventions have led to collaborations between Crime Check Foundation and the UNODC,OSIWA, ILO, and USAID.
+          </p>
+          <p>Mr Kwarteng is the recipient of several awards,including Best GJA Journalists for Court and Crime reporting 2020, Best GJA Journalist for COVID reporting, 2021, Advocacy Journalist of the year 2019, and Forklex Media Award, Gold Category for Philanthropic journalism, 2021. He was also named as one of the 100 most impactful change makers in Ghana in 2024.</p>
         </div>
       </div>
     </section>
@@ -144,7 +174,7 @@ definePageMeta({
             <div class="bg-blue- border h-2 w-2 border-blue-600 bg-blue-600 p-2 rounded-full"></div>
             <h3 class="text-xl font-bold">2018</h3>
           </div>
-          <p>Crime Checkwas recognized as the most reputable voice in the fight  for crime justice  in Ghana </p>
+          <p>Crime Check was recognized as the most reputable voice in the fight  for crime justice  in Ghana </p>
         </div>
       </div>
     </section>

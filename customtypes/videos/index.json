@@ -1,0 +1,33 @@
+{
+  "format": "custom",
+  "id": "videos",
+  "label": "videos",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "video": {
+        "type": "Link",
+        "config": {
+          "label": "video",
+          "placeholder": "",
+          "select": "media",
+          "allowText": true
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "title",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

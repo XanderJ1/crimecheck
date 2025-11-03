@@ -30,7 +30,8 @@ const closeMobileMenu = () => {
       <NuxtLink to="/" class="font-bold hover:opacity-80 transition-opacity">Home</NuxtLink>
       <NuxtLink to="/projects" class="font-bold hover:opacity-80 transition-opacity">Projects</NuxtLink>
       <NuxtLink to="/about" class="font-bold hover:opacity-80 transition-opacity">About Us</NuxtLink>
-      <NuxtLink to="/events" class="font-bold hover:opacity-80 transition-opacity">Events</NuxtLink>
+      <NuxtLink to="/gallery" class="font-bold hover:opacity-80 transition-opacity">Gallery</NuxtLink>
+      <NuxtLink to="/news" class="font-bold hover:opacity-80 transition-opacity">News</NuxtLink>
       <NuxtLink to="/donate" class="bg-blue-600 px-5 py-2 border border-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
         Donate
       </NuxtLink>
@@ -111,6 +112,13 @@ const closeMobileMenu = () => {
                 @click="closeMobileMenu"
             >
               Events
+            </NuxtLink>
+            <NuxtLink
+                to="/news"
+                class="px-4 py-3 rounded-lg text-gray-900 font-semibold hover:bg-gray-100 transition-colors"
+                @click="closeMobileMenu"
+            >
+              News
             </NuxtLink>
 
             <!-- Donate Button in Mobile Menu -->
