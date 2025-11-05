@@ -1,11 +1,11 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Gallery | Meena Breast Cancer Foundation',
+  title: 'Gallery | Crime Check Foundation',
   description:
-      'Explore our gallery showcasing breast cancer awareness campaigns, community outreach, school programs, and workshops across Ghana.',
+      'Explore our gallery showcasing awareness campaigns, community outreach, school programs, and workshops across Ghana to advocate for prison reforms and justice.',
   ogTitle: 'Gallery | Meena Breast Cancer Foundation',
   ogDescription:
-      'See how Meena Breast Cancer Foundation is making an impact through outreach, education, and corporate partnerships.',
+      'See how Crime Check Foundation is making an impact through outreach, education, and corporate partnerships.',
   ogImage: '/social-share.jpg',
   ogUrl: 'https://www.meenabreastcancerfoundationgh.org/gallery',
   twitterCard: 'summary_large_image',

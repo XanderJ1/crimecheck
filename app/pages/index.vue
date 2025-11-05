@@ -109,31 +109,35 @@ definePageMeta({
 
   <section class="max-w-7xl mx-auto px-2 mt-20">
     <h2 class="text-4xl text-center md:text-start font-semibold mt-10">What others say about us</h2>
-    <p class="text-2xl my-8">Real stories of Transformation</p>
 
     <div class="flex flex-col max-w-7xl mx-auto gap-10 justify-center px-2 md:flex-row ">
       <TestimonialCard
-          message="CrimeCheck foundation gave me a chance when no one believed in me."
-          name="Akosua Serwaah"
-          role="Former prisoner"
-          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/testimonial1.jpg"
+          message="The wonderful projects that Crime Check is doing are transforming and impacting lives across Ghana."
+          name="Alhassan Suhuyini"
+          role="MP,   Tamale North"
+          image="/images/tamale.jpg"
           />
       <TestimonialCard
-          message="Their work is changing the narrative around criminal justice in Ghana."
-          name="Theresa Markwei"
-          role="lawyer"
-          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/testimonial2.jpg" />
+          message="I congratulate Ibrahim Oppong Kwarteng has made strides in changing lives with Crime Check."
+          name="Roseland Gaisie"
+          role="Judicial Service"
+          image="/images/gaisie.jpg" />
       <TestimonialCard
-          message="We've seen real systemic change through their dedicated advocacy."
-          name="Regina Turkson"
-          role="MP. Agona East"
-          image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/testimonial3.jpg"/>
+          message="Help us to change the law"
+          name="Professor Mike Oquaye"
+          role="Former Speaker of Parliament"
+          image="/images/speaker.jpg"
+      />
+
+
+
+
     </div>
   </section>
 
-  <article class="flex flex-col md:flex-row items-center  md:px-16 justify-between h-70 bg-[position:center_60%] bg-cover before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0 max-w-7xl mx-auto my-15 bg-[url('/assets/images/ai_inmate_behind_bars.jpg')]">
+  <article class="flex flex-col md:flex-row items-center  md:px-16 justify-between h-70 bg-[position:center_60%] bg-cover before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0 max-w-7xl mx-auto my-15 bg-[url('/assets/images/bars.jpg')]">
     <div>
-      <h2 class="text-3xl  text-center md:text-start mb-5 font-bold text-white">Be a part the change  you seek</h2>
+      <h2 class="text-3xl  text-center md:text-start mb-5 font-bold text-white">Be a part of the change  you seek</h2>
       <p class="text-2xl text-center text-white">Join Our mission to transform justice</p>
     </div>
     <button class="text-xl w-fit mx-auto md:mx-0 mb-5 md:mb-0 h-fit px-4 py-3 rounded text-white bg-blue-600 border border-blue-600" to="/">Donate Now</button>

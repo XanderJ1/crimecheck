@@ -14,10 +14,9 @@ const props = defineProps({
     <div class="flex flex-col row-start-2 md:row-start-1 md:ml-15 gap-4">
       <h3 class="font-bold text-xl mb-4">{{ title }}</h3>
       <p>{{story}}</p>
-      <h4 class="font-semibold mt-2">- {{ name }}</h4>
     </div>
 
-    <img class="w-120 rounded-xl" :src="image" alt="" />
+    <img class="w-120 h-120 rounded-xl" :src="image" alt="" />
   </div>
 
 </template>

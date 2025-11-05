@@ -22,9 +22,8 @@ useHead({
 <template>
   <section class="max-w-2xl mx-auto justify-center items-center flex mb-16">
      <div class="flex flex-col gap-2 items-center justify-center">
-       <h1 class="text-5xl font-bold text-center mb-8">Transforming Lives, through Restoring Justice</h1>
-         <p class="text-center text-xl">Over the years we have been involved in various humanitarian endeavours. addressing system inequalities
-           in the judicial system.
+       <h1 class="text-5xl font-bold text-center mb-8">Transforming Lives Through Restoring Justice</h1>
+         <p class="text-center text-xl">Over the years we have been involved in various humanitarian endeavors addressing inequalities in the judicial system.
          </p>
        <NuxtLink to="/" class="bg-blue-600 border-blue-600 text-xl px-5 py-3 mt-3 text-white rounded-2xl">Donate</NuxtLink>
 
@@ -42,10 +41,13 @@ useHead({
     <h3 class="text-2xl" >Prison Projects</h3>
     <div class="flex items-center justify-between">
       <div class="basis-1/2">
+        <p class="font-semibold mb-3 text-gray-800">Prison Reforms</p>
+        <p class="text-gray-700 mb-4">
+          Improving prison conditions to challenge the status quo about incarceration as a form of punishment
+        </p>
         <p class="font-semibold mb-3 text-gray-800">Petty Offenders Project</p>
         <p class="text-gray-700 mb-4">
-          This initiative secures the release of individuals imprisoned for minor offenses
-          and provides legal aid, helping to decongest Ghana’s prisons and reform the system.
+          This initiative secures the release of individuals imprisoned for minor offences through the payment of court fines because of the absence of a Non-Custodial Sentencing Law in Ghana
         </p>
 
         <p class="font-semibold mb-3 text-gray-800">Ex-Convict Reintegration</p>
@@ -53,6 +55,7 @@ useHead({
           Through counseling, skills training, and livelihood support, this project assists
           ex-convicts to reintegrate into society with dignity and purpose.
         </p>
+
 
       </div>
       <div class="basis-1/2">
@@ -67,24 +70,22 @@ useHead({
 
         <p class="font-semibold mb-3 text-gray-800">Street Charity Series</p>
         <p class="text-gray-700 mb-4">
-          Offering food, clothing, and basic necessities to people living on the streets,
-          transforming lives one act of kindness at a time.
+          Offering financial support and basic necessities including food, and clothing to people living on the streets.
         </p>
 
         <p class="font-semibold mb-3 text-gray-800">Village Charity Series</p>
         <p class="text-gray-700 mb-4">
-          Extending humanitarian aid to remote communities, providing healthcare, food, and education.
+          Extending humanitarian aid to remote communities, including the provision of healthcare, food, and cash donations.
         </p>
 
         <p class="font-semibold mb-3 text-gray-800">Health Check Series</p>
         <p class="text-gray-700 mb-4">
-          Organizing free medical screenings and health education campaigns to promote wellbeing.
+          Payment of medical bills of financial distressed patients.
         </p>
 
         <p class="font-semibold mb-3 text-gray-800">Educational Support Series</p>
         <p class="text-gray-700">
-          Supporting underprivileged children with school fees, uniforms, and learning materials.
-        </p>
+        Helping the underprivileged realize their dreams through the payment of school fees, provision of uniforms, and learning materials.        </p>
       </div>
 
       <div class="basis-1/2">
@@ -107,8 +108,8 @@ useHead({
     <div class="flex flex-col px-3 gap-8">
       <StoryCard
           title="Crime Check rescues Ama Animah"
-          story="A pregnant young woman at Nsawam Female Prison was sentenced to two years for assault after defending herself in a domestic altercation. Her husband brought another woman into their home, leading to a confrontation where she struck the woman with a sandal. Now in prison with her toddler and expecting another child, she has received no support from her husband."
-          image="/images/wom.jpg"
+          story="After we shared the story of Ama Nima from Kumasi Central Prison three weeks ago, many were those who expressed disgust. The thought of being sentenced to five years in prison because she couldn't pay a court fine,  after being beaten by other family members was difficult to grasp. But God works in mysterious ways! After her release from prison, I asked Ama what she wanted to do for a living. She said with 500 cedis, she could do a lot. Little did she know we at Crime Check Foundation had other plans for her. Through the donations we received from some good Samaritans, we rented a flat in Accra for Ama and her two children and moved them in. She was so surprised she wept all day. A dustbin attendant now moves into a plush accommodation paid in advance of four years. But the biggest surprise was on its way!  This afternoon we showed Ama her big provisions shop and gave her a sum of seven thousand Ghana cedis. Your guess is as good as mine! It was tears and tears and tears of Joy! To all those who helped change the circumstances of poor Ama Anima,  may the Almighty God richly bless you."
+          image="/images/animah.jpg"
       />
 
       <AppStoryCard2
@@ -130,6 +131,12 @@ useHead({
            he now advocates for fair sentencing and helps identify others unjustly imprisoned for petty offenses.r"
             image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/teacher_rescue.jpg"
           reverse
+      />
+
+      <StoryCard
+          title="CCF Helps Free Akollobilla"
+          story="Someone gave asthmatic  102-year-old Akollobilla weed to sell after he  had been sacked as a farm attendant and was struggling to feed himself. After ignorantly accepting the offer out of hunger, he was arrested the next day and given a ten year sentence at  Kumasi Central Prison at a time the Narcotics Control Commission bill had not been reviewed by Parliament. We supported him in prison on our visits, providing him all he needed. We did our best and got him a presidential pardon two years ago. He was healthy when we visited him in his village to present him money and some toiletries, only to hear today that  102yr old Akollobilla has joined His maker. May Allah grant our grandfather a lofty place in paradise."
+          image="/images/oldman.jpg"
       />
 
     </div>
