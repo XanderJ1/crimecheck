@@ -43,7 +43,7 @@ useHead({
       <div class="basis-1/2">
         <p class="font-semibold mb-3 text-gray-800">Prison Reforms</p>
         <p class="text-gray-700 mb-4">
-          Improving prison conditions to challenge the status quo about incarceration as a form of punishment
+          Improving prison conditions to challenge the status quo about incarceration as a form of punishment
         </p>
         <p class="font-semibold mb-3 text-gray-800">Petty Offenders Project</p>
         <p class="text-gray-700 mb-4">
@@ -80,7 +80,7 @@ useHead({
 
         <p class="font-semibold mb-3 text-gray-800">Health Check Series</p>
         <p class="text-gray-700 mb-4">
-          Payment of medical bills of financial distressed patients.
+          Payment of medical bills of financially distressed patients.
         </p>
 
         <p class="font-semibold mb-3 text-gray-800">Educational Support Series</p>

@@ -118,12 +118,12 @@ definePageMeta({
           image="/images/tamale.jpg"
           />
       <TestimonialCard
-          message="I congratulate Ibrahim Oppong Kwarteng has made strides in changing lives with Crime Check."
+          message="I congratulate Ibrahim Oppong Kwarteng. He has made strides in changing lives with Crime Check."
           name="Roseland Gaisie"
           role="Judicial Service"
           image="/images/gaisie.jpg" />
       <TestimonialCard
-          message="Help us to change the law"
+          message="Help us change the law"
           name="Professor Mike Oquaye"
           role="Former Speaker of Parliament"
           image="/images/speaker.jpg"
