@@ -22,6 +22,7 @@ const props = defineProps({
           <NuxtLink to="/events" class="font-bold hidden md:block">Events</NuxtLink>
             <ul class="flex gap-4">
             <NuxtLink to="/donate" class="bg-blue-600 px-5 py-2 border border-blue-600 text-white rounded">Donate</NuxtLink>
+            <NuxtLink to="/donate" class="bg-blue-600 px-5 py-2 border border-blue-600 text-white rounded">Donate</NuxtLink>
             </ul>
         </nav>
     </header>

@@ -26,14 +26,17 @@ const closeMobileMenu = () => {
     </div>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center text-xl gap-8" :class="color ? 'text-black' : 'text-white'">
+    <nav class="hidden md:flex items-center text-xl gap-6" :class="color ? 'text-black' : 'text-white'">
       <NuxtLink to="/" class="font-bold hover:opacity-80 transition-opacity">Home</NuxtLink>
       <NuxtLink to="/projects" class="font-bold hover:opacity-80 transition-opacity">Projects</NuxtLink>
       <NuxtLink to="/about" class="font-bold hover:opacity-80 transition-opacity">About Us</NuxtLink>
       <NuxtLink to="/gallery" class="font-bold hover:opacity-80 transition-opacity">Gallery</NuxtLink>
       <NuxtLink to="/news" class="font-bold hover:opacity-80 transition-opacity">News</NuxtLink>
-      <NuxtLink to="/donate" class="bg-blue-600 px-5 py-2 border border-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+      <NuxtLink to="/donate" class="bg-blue-600 px-3 py-1 border border-blue-600 text-white rounded-2xl hover:bg-blue-700 transition-colors">
         Donate
+      </NuxtLink>
+      <NuxtLink to="/volunteer" class="bg-green-600 px-3 py-1 border border-green-600 text-white rounded-2xl hover:bg-green-700 transition-colors">
+        Volunteer
       </NuxtLink>
     </nav>
 

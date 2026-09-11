@@ -25,12 +25,12 @@
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="#" class="text-slate-400 hover:text-white transition-colors text-sm">
+              <NuxtLink to="/events" class="text-slate-400 hover:text-white transition-colors text-sm">
                 Events
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="#" class="text-slate-400 hover:text-white transition-colors text-sm">
+              <NuxtLink to="/volunteer" class="text-slate-400 hover:text-white transition-colors text-sm">
                 Volunteer
               </NuxtLink>
             </li>
@@ -102,7 +102,7 @@
               <i class="pi pi-twitter text-xl"></i>
             </a>
             <a 
-              href="https://www.youtube.com/@Meenabreastcancertv"
+              href="https://www.youtube.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"

@@ -1,14 +1,15 @@
 <script setup lang="ts">
+import Navbar from '~/components/app/Navbar.vue'
 
 useSeoMeta({
-  title: 'News | Meena Breast Cancer Foundation',
+  title: 'News | Crime Check Foundation',
   description:
-      'Explore our gallery showcasing breast cancer awareness campaigns, community outreach, school programs, and workshops across Ghana.',
-  ogTitle: 'News | Meena Breast Cancer Foundation',
+      'Read the latest news, stories, and updates from Crime Check Foundation Ghana.',
+  ogTitle: 'News | Crime Check Foundation',
   ogDescription:
-      'See how Meena Breast Cancer Foundation is making an impact through outreach, education, and corporate partnerships.',
+      'See how Crime Check Foundation is making an impact through justice reform, humanitarian support, and community outreach.',
   ogImage: '/social-share.jpg',
-  ogUrl: 'https://www.meenabreastcancerfoundationgh.org/gallery',
+  ogUrl: 'https://crimecheckfoundationgh.org/news',
   twitterCard: 'summary_large_image',
 })
 
@@ -79,8 +80,7 @@ onUnmounted(() => {
 
 <template>
   <section class="mx-auto pb-16">
-    <Navbar />
-
+    
     <!-- Header -->
     <section class="relative bg-gradient-to-r from-slate-800 to-slate-800 text-white py-20">
       <div class="absolute inset-0 opacity-10">

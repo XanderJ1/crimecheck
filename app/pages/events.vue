@@ -61,9 +61,6 @@ const { data: events } = await useAsyncData('event', async () => {
   }))
 })
 
-console.log(events.value);
-
-
 // Simple in-page data for demonstration purposes.
 // Replace with API data or content files when integrating a backend/CMS.
 interface EventItem {

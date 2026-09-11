@@ -7,6 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "smoke": "node scripts/smoke-check.mjs",
     "postinstall": "nuxt prepare",
     "slicemachine": "start-slicemachine"
   },
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@nuxtjs/prismic": "^4.1.0",
     "@slicemachine/adapter-nuxt": "^0.3.84",
+    "baseline-browser-mapping": "^2.11.22",
     "daisyui": "^5.1.27",
     "slice-machine-ui": "^2.18.2"
   }

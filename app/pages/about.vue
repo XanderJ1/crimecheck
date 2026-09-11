@@ -19,7 +19,7 @@ useHead({
 
 
 definePageMeta({
-  layout: 'about-page',
+  layout: 'about',
 })
 </script>
 
@@ -155,7 +155,7 @@ definePageMeta({
           Mr Kwarteng recently completed his PhD in Migration Studies at the University of Ghana, Legon.
           <p>Through his Crime Check Foundation, CCF has brought monumental changes in Ghana's Criminal Justice System by releasing hundreds of prisoners under the Foundation's Petty Offenders Project and re-integrated most of them into society under the organization's Ex-convict Reintegration Project.
           </p>
-          <p>The Foundation's Health Check Series, General Charity Series, Educational Support Series, Street and Village Charity Series and the establishment of Meena Breast Cancer Foundation have brought immense relief to the poor, the needy and the vulnerable across Ghana.
+          <p>The Foundation's Health Check Series, General Charity Series, Educational Support Series, Street and Village Charity Series and related humanitarian relief initiatives have brought immense relief to the poor, the needy and the vulnerable across Ghana.
           </p>
           <p>
           His advocacy for the passage of the Non-Custodial Sentencing and the Narcotics Control Commission Bills into law and other human rights interventions have led to collaborations between Crime Check Foundation and the UNODC,OSIWA, ILO, and USAID.

@@ -1,5 +1,6 @@
 <script setup>
 
+import { reactive, ref } from 'vue'
 import TestimonialCard from "~/components/app/TestimonialCard.vue";
 import InitiativeCard from "~/components/app/InitiativeCard.vue";
 import Navbar from "~/components/app/Navbar.vue";
@@ -26,6 +27,42 @@ useHead({
 definePageMeta({
   layout: 'landing-page',
 })
+
+const contactForm = reactive({
+  name: '',
+  email: '',
+  phone: '',
+  subject: '',
+  message: '',
+})
+
+const contactLoading = ref(false)
+const contactError = ref(null)
+const contactSuccess = ref(null)
+
+async function submitContactForm() {
+  contactLoading.value = true
+  contactError.value = null
+  contactSuccess.value = null
+
+  try {
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      body: contactForm,
+    })
+
+    contactSuccess.value = `${response.message}. Reference: ${response.id}`
+    contactForm.name = ''
+    contactForm.email = ''
+    contactForm.phone = ''
+    contactForm.subject = ''
+    contactForm.message = ''
+  } catch (err) {
+    contactError.value = err?.data?.message || err?.message || 'Unable to send your message right now.'
+  } finally {
+    contactLoading.value = false
+  }
+}
 </script>
 
 <template>
@@ -92,7 +129,7 @@ definePageMeta({
 
         <div class="flex gap-4">
           <NuxtLink to="/donate" class="text-xl font-bold text-white border border-blue-600 rounded bg-blue-600 px-8 py-2">Donate</NuxtLink>
-          <NuxtLink to="/projects" class="text-xl font-bold border border-green-600 text-white rounded bg-green-600 px-5 py-2">Learn more</NuxtLink>
+          <NuxtLink to="/volunteer" class="text-xl font-bold border border-green-600 text-white rounded bg-green-600 px-5 py-2">Volunteer</NuxtLink>
         </div>
       </div>
     </div>
@@ -181,13 +218,22 @@ definePageMeta({
   </section>
 
   <section class="max-w-7xl mx-auto mt-20 mb-16">
-    <h2 class="max-w-7xl mx-auto text-center text-5xl mt-25 mb-8 md:text-start">Contact Us</h2>
-    <form class="flex flex-col  gap-5 px-2 md:justify-start" aria-labelledby="contact-heading">
-      <input class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="text" id="name" placeholder="Full Name" />
-      <input class="w-full md:w-130 h-15 pl-3 bg-gray-200"type="text" id="email" placeholder="Email"/>
-      <input class="w-full md:w-130 h-15 pl-3 bg-gray-200"type="number" id="phone" placeholder="Phone" />
-      <textarea class="w-full md:w-130 h-25 pl-3 bg-gray-200" placeholder="Message" name="message" id="message"></textarea>
-      <button class="w-full text-center md:w-fit md:text-left rounded border border-green-500 px-15 py-3 bg-green-500 text-white">Send</button>
+    <h2 id="contact-heading" class="max-w-7xl mx-auto text-center text-5xl mt-25 mb-8 md:text-start">Contact Us</h2>
+    <form class="flex flex-col gap-5 px-2 md:justify-start" aria-labelledby="contact-heading" @submit.prevent="submitContactForm">
+      <input v-model="contactForm.name" class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="text" id="name" name="name" required placeholder="Full Name" />
+      <input v-model="contactForm.email" class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="email" id="email" name="email" required placeholder="Email"/>
+      <input v-model="contactForm.phone" class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="tel" id="phone" name="phone" placeholder="Phone" />
+      <input v-model="contactForm.subject" class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="text" id="subject" name="subject" placeholder="Subject" />
+      <textarea v-model="contactForm.message" class="w-full md:w-130 h-25 pl-3 pt-3 bg-gray-200" required placeholder="Message" name="message" id="message"></textarea>
+      <button :disabled="contactLoading" class="w-full text-center md:w-fit md:text-left rounded border border-green-500 px-15 py-3 bg-green-500 text-white disabled:opacity-50">
+        {{ contactLoading ? 'Sending...' : 'Send' }}
+      </button>
+      <p v-if="contactSuccess" class="w-full md:w-130 rounded-lg bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
+        {{ contactSuccess }}
+      </p>
+      <p v-if="contactError" class="w-full md:w-130 rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+        {{ contactError }}
+      </p>
     </form>
   </section>
 

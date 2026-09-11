@@ -1,13 +1,15 @@
 <script setup lang="ts">
+import Navbar from '~/components/app/Navbar.vue'
+
 useSeoMeta({
   title: 'Gallery | Crime Check Foundation',
   description:
       'Explore our gallery showcasing awareness campaigns, community outreach, school programs, and workshops across Ghana to advocate for prison reforms and justice.',
-  ogTitle: 'Gallery | Meena Breast Cancer Foundation',
+  ogTitle: 'Gallery | Crime Check Foundation',
   ogDescription:
       'See how Crime Check Foundation is making an impact through outreach, education, and corporate partnerships.',
   ogImage: '/social-share.jpg',
-  ogUrl: 'https://www.meenabreastcancerfoundationgh.org/gallery',
+  ogUrl: 'https://crimecheckfoundationgh.org/gallery',
   twitterCard: 'summary_large_image',
 })
 
@@ -24,7 +26,6 @@ const { data: galleryGroups } = await useAsyncData('gallery', async () => {
   }))
 })
 
-console.log(galleryGroups.value)
 const { data: videos } = await useAsyncData('videos', async () => {
   const docs = await prismic.client.getAllByType('videos');
   return docs.map((doc) => ({
@@ -33,8 +34,6 @@ const { data: videos } = await useAsyncData('videos', async () => {
     videoUrl: doc.data.video?.url || '',
   }));
 });
-
-console.log(galleryGroups.value);
 </script>
 
 <template>
