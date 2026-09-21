@@ -39,7 +39,6 @@ const { data: videos } = await useAsyncData('videos', async () => {
 <template>
 
   <section class=" mx-auto  pb-16">
-    <Navbar />
     <!-- Header -->
     <section class="relative bg-gradient-to-r from-slate-800 to-slate-800 text-white py-20">
       <div class="absolute inset-0 opacity-10">
