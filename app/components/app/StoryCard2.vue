@@ -10,17 +10,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="grid md:grid-cols-2 p-2 items-center">
-    <img class="flex w-130 rounded-xl justify-end" :src="image" alt="" />
-      <div class="flex flex-col md:ml-15 gap-4">
-      <h3 class="font-bold text-xl mb-4 mt-2">{{ title }}</h3>
-      <p>{{story}}</p>
-    </div>
-
-  </div>
-
+  <article class="ccf-story-card" >
+    <img loading="lazy" :src="image" alt="" width="800" height="600" />
+    <div><h3>{{ title }}</h3><p>{{ story }}</p></div>
+  </article>
 </template>
-
-<style scoped>
-
-</style>

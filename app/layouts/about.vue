@@ -5,7 +5,7 @@ import Footer from "~/components/app/Footer.vue";
 </script>
 
 <template>
-    <div class="bg-gray-100">
+    <div class="bg-[#faf9f6]">
         <slot />
     </div>
 

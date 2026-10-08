@@ -313,6 +313,8 @@ export type StoryDocument<Lang extends string = string> =
  * Content for videos documents
  */
 interface VideosDocumentData {
+  captions?: prismic.LinkToMediaField<prismic.FieldState, never>;
+  transcript?: prismic.RichTextField;
   /**
    * video field in *videos*
    *

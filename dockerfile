@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # 4️⃣ Install dependencies
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@10 --activate
 RUN pnpm install --frozen-lockfile
 
 # 5️⃣ Build your Nuxt ap

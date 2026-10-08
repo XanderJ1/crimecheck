@@ -1,4 +1,5 @@
 import { createError } from 'h3'
+import { randomUUID } from 'node:crypto'
 
 export interface EmailTemplateParams {
   title: string
@@ -12,7 +13,7 @@ export interface EmailTemplateParams {
 }
 
 export function cleanText(value: unknown, maxLength: number) {
-  return String(value || '').trim().slice(0, maxLength)
+  return typeof value === 'string' ? value.trim().slice(0, maxLength) : ''
 }
 
 export function isValidEmail(email: string) {
@@ -20,7 +21,7 @@ export function isValidEmail(email: string) {
 }
 
 export function createSubmissionId(prefix: string) {
-  return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`
+  return `${prefix}_${randomUUID()}`
 }
 
 export async function sendEmailJS(templateParams: EmailTemplateParams) {
@@ -30,12 +31,14 @@ export async function sendEmailJS(templateParams: EmailTemplateParams) {
   const privateKey = process.env.EMAILJS_PRIVATE_KEY
 
   if (!serviceId || !templateId || !publicKey || !privateKey) {
-    throw createError({ statusCode: 500, statusMessage: 'EmailJS is not configured' })
+    throw createError({ statusCode: 503, statusMessage: 'Messages are temporarily unavailable. Please call +233 242 074 276.' })
   }
 
   try {
     await $fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
+      retry: 0,
+      timeout: 15000,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -48,8 +51,6 @@ export async function sendEmailJS(templateParams: EmailTemplateParams) {
       },
     })
   } catch (err: any) {
-    const statusCode = err?.response?.status || 502
-    const statusMessage = err?.response?._data || err?.message || 'Unable to send email'
-    throw createError({ statusCode, statusMessage })
+    throw createError({ statusCode: 502, statusMessage: 'We couldn’t confirm delivery. Your details are still here. Please try again later or call +233 242 074 276.' })
   }
 }

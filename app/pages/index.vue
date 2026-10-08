@@ -17,7 +17,7 @@ useHead({
     { name: 'keywords', content: 'Crime Check Foundation, Ghana, justice reform, prison reform, humanitarian support, vagrancy laws, USAID' },
     { property: 'og:title', content: 'Crime Check Foundation Ghana' },
     { property: 'og:description', content: 'Driving justice reform and supporting vulnerable lives in Ghana.' },
-    { property: 'og:image', content: '/assets/images/oppong.jpeg' },
+    { property: 'og:image', content: 'https://crimecheckfoundationgh.org/images/oppong.jpeg' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
   ],
@@ -41,6 +41,7 @@ const contactError = ref(null)
 const contactSuccess = ref(null)
 
 async function submitContactForm() {
+  if (contactLoading.value) return
   contactLoading.value = true
   contactError.value = null
   contactSuccess.value = null
@@ -58,7 +59,7 @@ async function submitContactForm() {
     contactForm.subject = ''
     contactForm.message = ''
   } catch (err) {
-    contactError.value = err?.data?.message || err?.message || 'Unable to send your message right now.'
+    contactError.value = err?.data?.statusMessage || err?.data?.message || 'Unable to send your message right now.'
   } finally {
     contactLoading.value = false
   }
@@ -66,177 +67,84 @@ async function submitContactForm() {
 </script>
 
 <template>
-  <header class="relative bg-[url('/assets/images/kwarteng2.jpg')] bg-center bg-cover h-screen before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0" role="banner">
-    <div class="relative z-10">
-      <TestNavbar />
-    </div>
-    <section class="flex max-w-7xl mx-auto mt-20" aria-labelledby="hero-heading">
-      <div class="flex flex-col items-center gap-8 md:items-start md:ml-20">
-        <h1 id="hero-heading" class="main z-1 text-center md:text-start text-white font-bold font-sans text-3xl md:text-[60px] max-w-[530px]">
-          REINFORCING JUDICIAL PROTECTION FOR INMATES
-        </h1>
-
-        <p class="text-white text-center z-1 max-w-[400px]">
-          In the heart of Ghana we fight for those who are neglected by the system.
-          We provide justice for those who lack the means to fight for themselves.
-        </p>
-
-        <div class="flex gap-4">
-          <NuxtLink to="/donate" class="z-1 inline-flex items-center text-base md:text-xl text-white font-semibold px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">Donate</NuxtLink>
-          <NuxtLink to="/" class="z-1  inline-flex items-center text-base md:text-xl font-semibold px-5 py-3 rounded-lg border-2 border-green-600 text-white hover:bg-green-600/10 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition">Learn More</NuxtLink>
-        </div>
-
+  <header class="home-hero" role="banner">
+    <TestNavbar />
+    <section class="site-shell ccf-hero-content" aria-labelledby="hero-heading">
+      <p class="eyebrow text-emerald-200">Justice. Dignity. A second chance.</p>
+      <h1 id="hero-heading">A fairer future.<br>For every life.</h1>
+      <p class="hero-description">Standing with people overlooked by the justice system. We advocate for prison reform and support vulnerable communities across Ghana.</p>
+      <div class="flex flex-wrap gap-4">
+        <NuxtLink to="/donate" class="action-primary">Support our work <span aria-hidden="true">&rarr;</span></NuxtLink>
+        <NuxtLink to="/about" class="action-outline">Meet the foundation</NuxtLink>
       </div>
-      <div>
-        <img class="hidden opacity-0" src="@/assets/images/people.jpg" alt="people">
-      </div>
+      <div class="hero-footnote"><span aria-hidden="true" class="h-2 w-2 rounded-full bg-emerald-300"></span> Rooted in Ghana. Committed to human dignity.</div>
     </section>
   </header>
 
-  <section class="mt-40 gap-8">
-    <h2 class="text-4xl mb-15 text-center">How We Impact Others</h2>
-    <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 gap-20">
-      <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/donate_prisons.jpg" class="w-xl" alt="prisoners" />
-      <div class="right flex flex-col gap-8 justify-center">
-
-        <div class="flex flex-col gap-2">
-          <div class="flex items-center gap-2">
-            <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/icon_love.svg" class="h-10 w-15" alt="care_icon" />
-            <h3 class="text-xl font-bold">Prison Support</h3>
-          </div>
-          <p>Providing rehabilitation programs and resources for incarcerated individuals seeking redemption.</p>
-
-        </div>
-
-
-        <div class="flex flex-col gap-2">
-          <div class="flex items-center gap-2">
-            <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/care.png" class="h-10 w-15" alt="care" />
-            <h3 class="text-xl font-bold">Legal Advocacy</h3>
-          </div>
-          <p>Challenging unjust laws that criminalize poverty and marginalize vulnerable populations. </p>
-
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <div class="flex items-center gap-2">
-            <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/icon_love.svg" class="h-10 w-15" alt="humanitarian support" />
-            <h3 class="text-xl font-bold">Philanthropy</h3>
-          </div>
-          <p>Transforming lives through strategic legal interventions and humanitarian support </p>
-
-        </div>
-
-        <div class="flex gap-4">
-          <NuxtLink to="/donate" class="text-xl font-bold text-white border border-blue-600 rounded bg-blue-600 px-8 py-2">Donate</NuxtLink>
-          <NuxtLink to="/volunteer" class="text-xl font-bold border border-green-600 text-white rounded bg-green-600 px-5 py-2">Volunteer</NuxtLink>
-        </div>
+  <section id="main-content" tabindex="-1" class="site-shell section-space">
+    <div class="section-heading">
+      <div><p class="eyebrow">What we stand for</p><h2>Justice begins with<br>seeing the person.</h2></div>
+      <p>Behind every case is a life. Our work brings together legal advocacy, practical support, and the belief that everyone deserves dignity.</p>
+    </div>
+    <div class="impact-grid">
+      <figure class="impact-photo"><img loading="lazy" src="/images/donate_prisons.jpg" alt="Crime Check Foundation's prison outreach" width="800" height="600"><figcaption>Supporting people. Strengthening communities.</figcaption></figure>
+      <div class="impact-list">
+        <article><span class="impact-number">01</span><div><h3>Prison support</h3><p>Resources and rehabilitation support for incarcerated people working towards a second chance.</p></div></article>
+        <article><span class="impact-number">02</span><div><h3>Legal advocacy</h3><p>Challenging laws that criminalize poverty and advocating for a fairer justice system.</p></div></article>
+        <article><span class="impact-number">03</span><div><h3>Humanitarian care</h3><p>Practical help for vulnerable people and families, delivered with care and compassion.</p></div></article>
+        <NuxtLink to="/projects" class="text-link">Explore our projects <span aria-hidden="true">&rarr;</span></NuxtLink>
       </div>
     </div>
   </section>
 
-    <article class="flex flex-col md:flex-row max-w-7xl mx-auto mt-20 my-10 items-center gap-10 bg-linear-gradient">
-      <h2 class="text-xl text-center md:text-start">Trusted by leading human rights organizations</h2>
-      <div class="flex ml-8 gap-8">
-        <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/osiwa.png" class="w-15 h-15" alt="OSIWA partner" />
-        <NuxtImg src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/usaid.svg" class="w-15 h-15" alt="USAID partner" />
-        <img src="/images/UNODC.png" class="w-15 h-15" alt="USAID partner" />
+  <section class="initiative-section section-space">
+    <div class="site-shell">
+      <div class="section-heading"><div><p class="eyebrow">Our focus</p><h2>Different paths.<br>A shared purpose.</h2></div><NuxtLink to="/projects" class="text-link">View all projects <span aria-hidden="true">&rarr;</span></NuxtLink></div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <InitiativeCard title="Prison reform" description="Improving prison conditions and supporting rehabilitation." icon="/images/reform.svg" />
+        <InitiativeCard title="Decriminalizing poverty" description="Challenging vagrancy laws that marginalize vulnerable communities." icon="/images/book.svg" />
+        <InitiativeCard title="Justice advocacy" description="Championing a fairer system through advocacy and public education." icon="/images/scale.svg" />
+        <InitiativeCard title="Philanthropy" description="Helping people meet essential needs through generous giving." icon="/images/globe.svg" />
       </div>
-    </article>
-
-  <section class="max-w-7xl mx-auto px-2 mt-20">
-    <h2 class="text-4xl text-center md:text-start font-semibold mt-10">What others say about us</h2>
-
-    <div class="flex flex-col max-w-7xl mx-auto gap-10 justify-center px-2 md:flex-row ">
-      <TestimonialCard
-          message="The wonderful projects that Crime Check is doing are transforming and impacting lives across Ghana."
-          name="Alhassan Suhuyini"
-          role="MP,   Tamale North"
-          image="/images/tamale.jpg"
-          />
-      <TestimonialCard
-          message="I congratulate Ibrahim Oppong Kwarteng. He has made strides in changing lives with Crime Check."
-          name="Roseland Gaisie"
-          role="Judicial Service"
-          image="/images/gaisie.jpg" />
-      <TestimonialCard
-          message="Help us change the law"
-          name="Professor Mike Oquaye"
-          role="Former Speaker of Parliament"
-          image="/images/speaker.jpg"
-      />
-
-
-
-
     </div>
   </section>
 
-  <article class="flex flex-col md:flex-row items-center  md:px-16 justify-between h-70 bg-[position:center_60%] bg-cover before:absolute before:inset-0 before:bg-[#584D4D]/20 before:z-0 max-w-7xl mx-auto my-15 bg-[url('/assets/images/bars.jpg')]">
-    <div>
-      <h2 class="text-3xl  text-center md:text-start mb-5 font-bold text-white">Be a part of the change  you seek</h2>
-      <p class="text-2xl text-center text-white">Join Our mission to transform justice</p>
-    </div>
-    <button class="text-xl w-fit mx-auto md:mx-0 mb-5 md:mb-0 h-fit px-4 py-3 rounded text-white bg-blue-600 border border-blue-600" to="/">Donate Now</button>
-  </article>
-
-  <section class="max-w-7xl px-2 mx-auto mt-20 mb-16">
-    <h2 class="text-5xl text-center mb-16">Our Key Initiatives</h2>
-    <div class="flex flex-col gap-4 md:flex-row">
-      <InitiativeCard
-        title="Prison reforms"
-        description="Improving prison conditions to challenge the status quo about incarceration as a for of punishment."
-        icon="/images/reform.svg"
-      />
-      <InitiativeCard
-          title="Decriminalizing Vagrancy Laws"
-          description="Challenging laws that criminalize poverty and further marginalize the vulnerable communities"
-          icon="/images/book.svg"
-      />
-      <InitiativeCard
-          title="Justice Advocacy"
-          description="Driving a change in criminal justice and championing a fairer system to transform lives"
-          icon="/images/scale.svg"
-      />
-      <InitiativeCard
-          title="Philanthropy"
-          description="Empowering lives through generous giving"
-          icon="/images/globe.svg"
-      />
-
-    </div>
-  </section>
-  <section class="max-w-7xl mx-auto">
-    <h2 class="text-center text-4xl mb-15 mt-20">Our Gallery</h2>
-    <div class="grid md:grid-cols-4 mx-auto px-4 gap-5 flex-col md:flex-row">
-      <NuxtImg class="w-full h-100 rounded-xl" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/donate.jpeg"  alt="school donate"/>
-      <NuxtImg class="w-full h-100 rounded-xl" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/inmate_gift.png"  alt="school donate"/>
-      <NuxtImg class="w-full h-100 rounded-xl" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/prisoners.jpg"  alt="school donate"/>
-      <NuxtImg class="w-full h-100 rounded-xl" src="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/oppong.jpeg"  alt="school donate"/>
-
+  <section class="site-shell section-space">
+    <div class="section-heading"><div><p class="eyebrow">Voices of support</p><h2>Our work, in their words.</h2></div></div>
+    <div class="grid gap-5 lg:grid-cols-3">
+      <TestimonialCard message="The wonderful projects that Crime Check is doing are transforming and impacting lives across Ghana." name="Alhassan Suhuyini" role="MP, Tamale North" image="/images/tamale.jpg" />
+      <TestimonialCard message="I congratulate Ibrahim Oppong Kwarteng. He has made strides in changing lives with Crime Check." name="Roseland Gaisie" role="Judicial Service" image="/images/gaisie.jpg" />
+      <TestimonialCard message="Help us change the law" name="Professor Mike Oquaye" role="Former Speaker of Parliament" image="/images/speaker.jpg" />
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto mt-20 mb-16">
-    <h2 id="contact-heading" class="max-w-7xl mx-auto text-center text-5xl mt-25 mb-8 md:text-start">Contact Us</h2>
-    <form class="flex flex-col gap-5 px-2 md:justify-start" aria-labelledby="contact-heading" @submit.prevent="submitContactForm">
-      <input v-model="contactForm.name" class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="text" id="name" name="name" required placeholder="Full Name" />
-      <input v-model="contactForm.email" class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="email" id="email" name="email" required placeholder="Email"/>
-      <input v-model="contactForm.phone" class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="tel" id="phone" name="phone" placeholder="Phone" />
-      <input v-model="contactForm.subject" class="w-full md:w-130 h-15 pl-3 bg-gray-200" type="text" id="subject" name="subject" placeholder="Subject" />
-      <textarea v-model="contactForm.message" class="w-full md:w-130 h-25 pl-3 pt-3 bg-gray-200" required placeholder="Message" name="message" id="message"></textarea>
-      <button :disabled="contactLoading" class="w-full text-center md:w-fit md:text-left rounded border border-green-500 px-15 py-3 bg-green-500 text-white disabled:opacity-50">
-        {{ contactLoading ? 'Sending...' : 'Send' }}
-      </button>
-      <p v-if="contactSuccess" class="w-full md:w-130 rounded-lg bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
-        {{ contactSuccess }}
-      </p>
-      <p v-if="contactError" class="w-full md:w-130 rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
-        {{ contactError }}
-      </p>
+  <section class="site-shell gallery-section">
+    <div class="section-heading"><div><p class="eyebrow">From the field</p><h2>People at the heart of it all.</h2></div><NuxtLink to="/gallery" class="text-link">Visit the gallery <span aria-hidden="true">&rarr;</span></NuxtLink></div>
+    <div class="home-gallery">
+      <img loading="lazy" src="/images/donate.jpeg" alt="Students gathered beside donated food and drinks" width="600" height="800">
+      <img loading="lazy" src="/images/inmate_gift.png" alt="Presentation of a boxed industrial sewing machine" width="800" height="600">
+      <img loading="lazy" src="/images/prisoners.jpg" alt="A large group gathered outdoors, waving toward the camera" width="800" height="600">
+    </div>
+  </section>
+
+  <section class="site-shell section-space">
+    <div class="support-banner"><div><p class="eyebrow text-emerald-200">Make a difference</p><h2>A little support.<br>A meaningful change.</h2><p>Be part of the work for justice and human dignity.</p></div><div class="flex flex-col items-start gap-5"><NuxtLink to="/donate" class="action-primary">Make a donation <span aria-hidden="true">&rarr;</span></NuxtLink><NuxtLink to="/volunteer" class="text-white underline underline-offset-4">Give your time. Volunteer with us &rarr;</NuxtLink></div></div>
+  </section>
+
+  <section id="contact" class="site-shell contact-section">
+    <div><p class="eyebrow">Get in touch</p><h2 id="contact-heading">Let's start<br>a conversation.</h2><p class="mt-6 max-w-sm text-slate-600">Have a question, an idea, or a way to help? We'd like to hear from you.</p><div class="contact-details"><a href="mailto:info@crimecheckfoundationgh.org">info@crimecheckfoundationgh.org</a><a href="tel:+233242074276">+233 242 074 276</a><p>Old barrier, Kasoa, Ghana</p></div></div>
+    <form class="contact-form" aria-labelledby="contact-heading" @submit.prevent="submitContactForm">
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div class="field"><label for="name">Full name <span>(required)</span></label><input autocomplete="name" maxlength="120" v-model="contactForm.name" type="text" id="name" name="name" required placeholder="Your full name"></div>
+        <div class="field"><label for="email">Email <span>(required)</span></label><input autocomplete="email" maxlength="160" v-model="contactForm.email" type="email" id="email" name="email" required placeholder="you@example.com"></div>
+        <div class="field"><label for="phone">Phone <span>(optional)</span></label><input autocomplete="tel" maxlength="60" v-model="contactForm.phone" type="tel" id="phone" name="phone" placeholder="Your phone number"></div>
+        <div class="field"><label for="subject">Subject <span>(optional)</span></label><input maxlength="160" v-model="contactForm.subject" type="text" id="subject" name="subject" placeholder="How can we help?"></div>
+      </div>
+      <div class="field"><label for="message">Message <span>(required)</span></label><textarea maxlength="2000" v-model="contactForm.message" rows="5" required placeholder="Tell us a little more..." name="message" id="message"></textarea></div>
+      <p class="text-sm leading-relaxed text-slate-600">We use your details to respond to your enquiry. <NuxtLink to="/privacy" class="underline underline-offset-2">How we use your information</NuxtLink>.</p>
+      <button type="submit" :disabled="contactLoading" class="action-primary self-start disabled:opacity-50">{{ contactLoading ? 'Sending...' : 'Send message' }} <span v-if="!contactLoading" aria-hidden="true">&rarr;</span></button>
+      <p role="status" v-if="contactSuccess" class="rounded-lg bg-green-50 px-4 py-3 text-sm font-medium text-green-700">{{ contactSuccess }}</p>
+      <p role="alert" v-if="contactError" class="rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700">{{ contactError }}</p>
     </form>
   </section>
-
-
-
 </template>

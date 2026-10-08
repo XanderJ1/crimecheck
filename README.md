@@ -1,4 +1,6 @@
-# Nuxt Minimal Starter
+# Crime Check Foundation
+
+See [audit remediation and deployment follow-up](AUDIT-FIXES.md) for payment setup, credential rotation, CMS captions, and the new validation commands.
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 

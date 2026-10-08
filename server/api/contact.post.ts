@@ -1,5 +1,6 @@
-import { createError, defineEventHandler, getRequestIP, readBody } from 'h3'
+import { createError, defineEventHandler } from 'h3'
 import { cleanText, createSubmissionId, isValidEmail, sendEmailJS } from '../utils/emailjs'
+import { limitRequests, readSubmissionBody } from '../utils/request-guard'
 
 interface ContactSubmission {
   name?: string
@@ -10,7 +11,8 @@ interface ContactSubmission {
 }
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody<ContactSubmission>(event)
+  limitRequests(event, 'contact', 10)
+  const body = await readSubmissionBody(event)
 
   const name = cleanText(body.name, 120)
   const email = cleanText(body.email, 160).toLowerCase()
@@ -26,9 +28,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: 'Please provide a valid email address' })
   }
 
-  const submittedAt = new Date().toISOString()
   const id = createSubmissionId('contact')
-  const ip = getRequestIP(event, { xForwardedFor: true }) || null
 
   await sendEmailJS({
     title: 'General Contact',
@@ -36,21 +36,9 @@ export default defineEventHandler(async (event) => {
     email,
     reply_to: email,
     phone,
-    subject,
+    subject: `${subject} [${id}]`,
     message,
     interest: 'General',
-  })
-
-  await useStorage('contact').setItem(id, {
-    id,
-    name,
-    email,
-    phone,
-    subject,
-    message,
-    submittedAt,
-    ip,
-    emailSent: true,
   })
 
   return {

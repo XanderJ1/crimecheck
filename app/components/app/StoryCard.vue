@@ -10,17 +10,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="grid md:grid-cols-2 p-2 items-center gap-8 col-start-2" :class="{'': reversed}">
-    <div class="flex flex-col row-start-2 md:row-start-1 md:ml-15 gap-4">
-      <h3 class="font-bold text-xl mb-4">{{ title }}</h3>
-      <p>{{story}}</p>
-    </div>
-
-    <img class="w-120 h-120 rounded-xl" :src="image" alt="" />
-  </div>
-
+  <article class="ccf-story-card" >
+    <img loading="lazy" :src="image" alt="" width="800" height="600" />
+    <div><h3>{{ title }}</h3><p>{{ story }}</p></div>
+  </article>
 </template>
-
-<style scoped>
-
-</style>

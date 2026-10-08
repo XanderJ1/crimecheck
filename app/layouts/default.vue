@@ -6,15 +6,13 @@ import TestNavbar from "~/components/app/TestNavbar.vue";
 </script>
 
 <template>
-  <div class="bg-gray-100">
-    <header>
+  <div class="bg-[#faf9f6]">
+    <header class="bg-white border-b border-slate-200">
       <TestNavbar color />
     </header>
-    <main class="container mx-auto mt-20 px-4" role="main">
+    <main id="main-content" tabindex="-1" class="site-shell ccf-page-main" role="main">
       <slot />
     </main>
-    <footer>
-      <Footer />
-    </footer>
+    <Footer />
   </div>
 </template>

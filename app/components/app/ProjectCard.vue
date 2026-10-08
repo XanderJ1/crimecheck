@@ -8,17 +8,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col md:flex-row items-center gap-8" :class="{ 'md:flex-row-reverse': reverse }">
-    <div class="md:w-1/2 flex-col gap-6 items-center">
-      <h3 class="font bold text-2xl mb-20">{{title}}</h3>
-      <p>{{ description }}</p>
-    </div>
-    <div class="md:w-1/2 flex-col gap-6 items-center">
-      <img class="w-200 h-120 rounded " :src="image" alt="" />
-    </div>
-  </div>
+  <article class="ccf-programme" :class="{ 'ccf-programme-reverse': reverse }">
+    <img loading="lazy" :src="image" alt="" width="800" height="600" />
+    <div><h3>{{ title }}</h3><p>{{ description }}</p></div>
+  </article>
 </template>
-
-<style scoped>
-
-</style>

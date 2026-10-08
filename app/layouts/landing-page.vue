@@ -7,9 +7,7 @@ import AppFooter from "~/components/app/Footer.vue";
   <main role="main">
     <slot />
   </main>
-  <footer>
-    <AppFooter />
-  </footer>
+  <AppFooter />
 </template>
 
 <style scoped>

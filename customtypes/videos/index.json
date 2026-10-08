@@ -21,6 +21,14 @@
           "allowText": true
         }
       },
+      "captions": {
+        "type": "Link",
+        "config": { "label": "English captions (WebVTT)", "select": "media" }
+      },
+      "transcript": {
+        "type": "StructuredText",
+        "config": { "label": "Transcript and visual descriptions", "multi": "paragraph,strong,em,hyperlink" }
+      },
       "title": {
         "type": "Text",
         "config": {

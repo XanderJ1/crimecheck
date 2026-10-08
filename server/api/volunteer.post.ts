@@ -1,5 +1,6 @@
-import { createError, defineEventHandler, getRequestIP, readBody } from 'h3'
+import { createError, defineEventHandler } from 'h3'
 import { cleanText, createSubmissionId, isValidEmail, sendEmailJS } from '../utils/emailjs'
+import { limitRequests, readSubmissionBody } from '../utils/request-guard'
 
 interface VolunteerSubmission {
   name?: string
@@ -18,7 +19,8 @@ const allowedInterests = new Set([
 ])
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody<VolunteerSubmission>(event)
+  limitRequests(event, 'volunteer', 10)
+  const body = await readSubmissionBody(event)
 
   const name = cleanText(body.name, 120)
   const email = cleanText(body.email, 160).toLowerCase()
@@ -38,9 +40,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: 'Please select a valid volunteer interest' })
   }
 
-  const submittedAt = new Date().toISOString()
   const id = createSubmissionId('vol')
-  const ip = getRequestIP(event, { xForwardedFor: true }) || null
 
   await sendEmailJS({
     title: 'Volunteer',
@@ -48,21 +48,9 @@ export default defineEventHandler(async (event) => {
     email,
     reply_to: email,
     phone,
-    subject: `Volunteer application: ${interest}`,
+    subject: `Volunteer application: ${interest} [${id}]`,
     message,
     interest,
-  })
-
-  await useStorage('volunteer').setItem(id, {
-    id,
-    name,
-    email,
-    phone,
-    interest,
-    message,
-    submittedAt,
-    ip,
-    emailSent: true,
   })
 
   return {

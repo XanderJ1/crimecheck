@@ -20,92 +20,35 @@ useHead({
 </script>
 
 <template>
-  <section class="max-w-2xl mx-auto justify-center items-center flex mb-16">
-     <div class="flex flex-col gap-2 items-center justify-center">
-       <h1 class="text-5xl font-bold text-center mb-8">Transforming Lives Through Restoring Justice</h1>
-         <p class="text-center text-xl">Over the years we have been involved in various humanitarian endeavors addressing inequalities in the judicial system.
-         </p>
-       <NuxtLink to="/" class="bg-blue-600 border-blue-600 text-xl px-5 py-3 mt-3 text-white rounded-2xl">Donate</NuxtLink>
-
-     </div>
-  </section>
-  <div class="flex justify-end">
-    <h4 class="flex bg-green-600 border text-white text-xl rounded-full h-24 w-24 text-center items-center fixed bottom-12 p-4">Donate</h4>
-  </div>
-  <section class="flex flex-col px-2 max-w-7xl mx-auto mt-20 mb-16 gap-8">
-      <div class="flex flex-col gap-2 items-center justify-center">
-        <h3 class="text-xl text-center font-bold">Our Key Initiatives</h3>
-        <h2 class="text-3xl  text-center"> Projects driving justice reforms.</h2>
-      </div>
-
-    <h3 class="text-2xl" >Prison Projects</h3>
-    <div class="flex items-center justify-between">
-      <div class="basis-1/2">
-        <p class="font-semibold mb-3 text-gray-800">Prison Reforms</p>
-        <p class="text-gray-700 mb-4">
-          Improving prison conditions to challenge the status quo about incarceration as a form of punishment
-        </p>
-        <p class="font-semibold mb-3 text-gray-800">Petty Offenders Project</p>
-        <p class="text-gray-700 mb-4">
-          This initiative secures the release of individuals imprisoned for minor offences through the payment of court fines because of the absence of a Non-Custodial Sentencing Law in Ghana
-        </p>
-
-        <p class="font-semibold mb-3 text-gray-800">Ex-Convict Reintegration</p>
-        <p class="text-gray-700">
-          Through counseling, skills training, and livelihood support, this project assists
-          ex-convicts to reintegrate into society with dignity and purpose.
-        </p>
-
-
-      </div>
-      <div class="basis-1/2">
-        <img class="w-150 h-100" src="/images/inmate_gift.png" alt="" />
-      </div>
-    </div>
-
-
-    <h3 class="text-2xl">Philanthropy </h3>
-    <div class="flex flex-col md:flex-row items-center gap-4 justify-between mb-12">
-      <div class="basis-1/2">
-
-        <p class="font-semibold mb-3 text-gray-800">Street Charity Series</p>
-        <p class="text-gray-700 mb-4">
-          Offering financial support and basic necessities including food, and clothing to people living on the streets.
-        </p>
-
-        <p class="font-semibold mb-3 text-gray-800">Village Charity Series</p>
-        <p class="text-gray-700 mb-4">
-          Extending humanitarian aid to remote communities, including the provision of healthcare, food, and cash donations.
-        </p>
-
-        <p class="font-semibold mb-3 text-gray-800">Health Check Series</p>
-        <p class="text-gray-700 mb-4">
-          Payment of medical bills of financially distressed patients.
-        </p>
-
-        <p class="font-semibold mb-3 text-gray-800">Educational Support Series</p>
-        <p class="text-gray-700">
-        Helping the underprivileged realize their dreams through the payment of school fees, provision of uniforms, and learning materials.        </p>
-      </div>
-
-      <div class="basis-1/2">
-        <img src="/images/phil.jpg" class="w-150 h-120" alt="" />
-      </div>
-    </div>
-
-    <ProjectCard
-        title="Decriminalizing Vagrancy Laws"
-        description="In partnership with key stakeholders, CCF leads the Decriminalizing Vagrancy Laws and Advocacy Project (DVLA) to protect poor and homeless Ghanaians from unjust arrests under outdated local by-laws. The initiative promotes legal awareness, policy reform,
-        and social inclusion, helping citizens live freely without fear of criminalization for poverty-related offenses."
-        image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images2/vagrant.jpg" reverse />
-    <ProjectCard title="Justice Tracker" description="CCF partners with USAID and Ghana’s justice institutions to implement the Case Tracking System (CTS)—a digital platform that monitors criminal cases from arrest to trial and beyond. The project enhances transparency, accountability, and timely justice
-    while empowering citizens to monitor and demand fair treatment within the justice process."
-                 image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/justice_hammer.jpg" />
-  </section>
-
-  <section class="max-w-7xl mx-auto mt-20 mb-16">
-    <h2 class="flex flex-col text-3xl md:text-4xl text-center gap-10 mb-16">Real Stories Of Transformation</h2>
-    <div class="flex flex-col px-3 gap-8">
+  <div class="ccf-projects">
+    <AppPageIntro eyebrow="Our projects" title="Practical support. Lasting change." description="From prison support to humanitarian care, explore the work behind our commitment to justice and dignity.">
+      <NuxtLink to="/donate" class="action-primary">Support these projects <span aria-hidden="true">&rarr;</span></NuxtLink>
+      <a href="#project-programmes" class="text-link">Explore our work</a>
+    </AppPageIntro>
+    <section id="project-programmes" class="ccf-content-section">
+      <div class="section-heading"><div><p class="eyebrow">Our programmes</p><h2>Meeting people where they are.</h2></div></div>
+      <article class="ccf-programme">
+        <div><p class="eyebrow">01 / Justice &amp; rehabilitation</p><h3>Prison support</h3><dl class="ccf-programme-list">
+          <div><dt>Prison reform</dt><dd>Improving prison conditions and supporting rehabilitation.</dd></div>
+          <div><dt>Petty Offenders Project</dt><dd>Helping people imprisoned for minor offences by paying court fines they cannot afford.</dd></div>
+          <div><dt>Reintegration</dt><dd>Counselling, skills training, and livelihood support to help former prisoners rebuild their lives.</dd></div>
+        </dl></div>
+        <img loading="lazy" src="/images/inmate_gift.png" alt="Presentation of a sewing machine to support livelihoods" width="800" height="600">
+      </article>
+      <article class="ccf-programme ccf-programme-reverse">
+        <div><p class="eyebrow">02 / Humanitarian support</p><h3>Care that reaches further.</h3><dl class="ccf-programme-list">
+          <div><dt>Street &amp; village charity</dt><dd>Food, clothing, financial help, and essential support for people on the streets and in remote communities.</dd></div>
+          <div><dt>Health Check</dt><dd>Helping financially distressed patients meet the cost of medical treatment.</dd></div>
+          <div><dt>Educational support</dt><dd>School fees, uniforms, and learning materials to help young people pursue their education.</dd></div>
+        </dl></div>
+        <img loading="lazy" src="/images/phil.jpg" alt="The foundation's humanitarian outreach" width="800" height="600">
+      </article>
+      <ProjectCard title="Decriminalizing vagrancy laws" description="Working with stakeholders to challenge the criminalization of poverty through legal awareness, policy advocacy, and social inclusion." image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images2/vagrant.jpg" />
+      <ProjectCard title="Justice Tracker" description="Supporting case tracking to improve transparency and accountability across the justice process, from arrest to trial and beyond." image="https://s3.eu-north-1.amazonaws.com/grinko.co.uk/images/justice_hammer.jpg" reverse />
+    </section>
+    <section class="ccf-content-section">
+      <div class="section-heading"><div><p class="eyebrow">Behind the work</p><h2>Stories of a second chance.</h2></div><p>Individual stories from the foundation's justice and humanitarian programmes.</p></div>
+      <div class="ccf-stories">
       <StoryCard
           title="Crime Check rescues Ama Animah"
           story="After we shared the story of Ama Nima from Kumasi Central Prison three weeks ago, many were those who expressed disgust. The thought of being sentenced to five years in prison because she couldn't pay a court fine,  after being beaten by other family members was difficult to grasp. But God works in mysterious ways! After her release from prison, I asked Ama what she wanted to do for a living. She said with 500 cedis, she could do a lot. Little did she know we at Crime Check Foundation had other plans for her. Through the donations we received from some good Samaritans, we rented a flat in Accra for Ama and her two children and moved them in. She was so surprised she wept all day. A dustbin attendant now moves into a plush accommodation paid in advance of four years. But the biggest surprise was on its way!  This afternoon we showed Ama her big provisions shop and gave her a sum of seven thousand Ghana cedis. Your guess is as good as mine! It was tears and tears and tears of Joy! To all those who helped change the circumstances of poor Ama Anima,  may the Almighty God richly bless you."
@@ -139,11 +82,8 @@ useHead({
           image="/images/oldman.jpg"
       />
 
-    </div>
-  </section>
 
+      </div>
+    </section>
+  </div>
 </template>
-
-<style scoped>
-
-</style>

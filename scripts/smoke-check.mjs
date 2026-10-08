@@ -37,7 +37,7 @@ for (const path of ['app/pages/events.vue', 'app/pages/gallery.vue']) {
 }
 
 assert(file('app/pages/donate.vue').includes('DonationForm'), 'donate route should use the shared donation form')
-assert(file('app/pages/paystack-test.vue').includes('DonationForm'), 'paystack-test route should use the shared donation form')
+assert(file('app/pages/paystack-test.vue').includes("navigateTo('/donate'"), 'test payment route should redirect to donation page')
 assert(existsSync(join(root, 'server/api/contact.post.ts')), 'contact API route is missing')
 assert(existsSync(join(root, 'server/api/volunteer.post.ts')), 'volunteer API route is missing')
 assert(file('server/utils/emailjs.ts').includes('api.emailjs.com/api/v1.0/email/send'), 'shared EmailJS sender should call the EmailJS REST send endpoint')
@@ -48,8 +48,9 @@ assert(!file('server/utils/emailjs.ts').includes('submission_id:'), 'EmailJS tem
 assert(!file('server/utils/emailjs.ts').includes('submitted_at:'), 'EmailJS template params should not require submitted_at')
 assert(file('app/pages/index.vue').includes('/api/contact'), 'contact form should submit to the backend API')
 assert(file('app/pages/volunteer.vue').includes('/api/volunteer'), 'volunteer page should submit to the backend API')
-assert(!file('app/pages/index.vue').includes('mailto:'), 'contact form should not use mailto submissions')
-assert(!file('app/pages/volunteer.vue').includes('mailto:'), 'volunteer page should not use mailto submissions')
+for (const path of ['app/pages/index.vue', 'app/pages/volunteer.vue']) {
+  assert(!/<form\b[^>]*action\s*=\s*["']mailto:/i.test(file(path)), `${path} form should not use mailto submissions`)
+}
 
 if (failures.length > 0) {
   console.error('Smoke check failed:')

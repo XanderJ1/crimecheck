@@ -2,12 +2,19 @@
   "name": "nuxt-app",
   "type": "module",
   "private": true,
+  "pnpm": {
+    "onlyBuiltDependencies": ["sharp", "esbuild", "@parcel/watcher"]
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "smoke": "node scripts/smoke-check.mjs",
+    "test": "node --test tests/donation.test.mjs",
+    "test:integration": "node --test tests/integration.test.mjs",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
     "postinstall": "nuxt prepare",
     "slicemachine": "start-slicemachine"
   },

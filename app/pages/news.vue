@@ -1,277 +1,45 @@
 <script setup lang="ts">
-import Navbar from '~/components/app/Navbar.vue'
-
-useSeoMeta({
-  title: 'News | Crime Check Foundation',
-  description:
-      'Read the latest news, stories, and updates from Crime Check Foundation Ghana.',
-  ogTitle: 'News | Crime Check Foundation',
-  ogDescription:
-      'See how Crime Check Foundation is making an impact through justice reform, humanitarian support, and community outreach.',
-  ogImage: '/social-share.jpg',
-  ogUrl: 'https://crimecheckfoundationgh.org/news',
-  twitterCard: 'summary_large_image',
-})
-
-const prismic = usePrismic();
-const { data: galleryGroups } = await useAsyncData('news', async () => {
-  const docs = await prismic.client.getAllByType('news');
-  return docs.map((doc) => ({
-    id: doc.id,
-    uid: doc.uid,
-    title: doc.data.title,
-    story: doc.data.story,
-    image: doc.data.image, // usually has { url, alt, dimensions }
-  }));
-});
-
-
-// Modal state
-const isModalOpen = ref(false)
-const selectedNews = ref(null)
-const selectedNewsIndex = ref(0)
-
-const openModal = (newsItem, index) => {
-  selectedNews.value = newsItem
-  selectedNewsIndex.value = index
-  isModalOpen.value = true
-  // Prevent body scroll when modal is open
-  document.body.style.overflow = 'hidden'
-}
-
-const closeModal = () => {
-  isModalOpen.value = false
-  selectedNews.value = null
-  document.body.style.overflow = 'auto'
-}
-
-const nextNews = () => {
-  if (selectedNewsIndex.value < galleryGroups.value.length - 1) {
-    selectedNewsIndex.value++
-    selectedNews.value = galleryGroups.value[selectedNewsIndex.value]
-  }
-}
-
-const previousNews = () => {
-  if (selectedNewsIndex.value > 0) {
-    selectedNewsIndex.value--
-    selectedNews.value = galleryGroups.value[selectedNewsIndex.value]
-  }
-}
-
-// Keyboard navigation
-const handleKeydown = (e) => {
-  if (!isModalOpen.value) return
-
-  if (e.key === 'Escape') closeModal()
-  if (e.key === 'ArrowRight') nextNews()
-  if (e.key === 'ArrowLeft') previousNews()
-}
-
-onMounted(() => {
-  window.addEventListener('keydown', handleKeydown)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeydown)
-  document.body.style.overflow = 'auto'
-})
+import Modal from '~/components/app/Modal.vue'
+useSeoMeta({ title: 'News | Crime Check Foundation', description: 'News and stories from our justice reform and humanitarian work across Ghana.', ogImage: 'https://crimecheckfoundationgh.org/images/logo.png' })
+const prismic = usePrismic()
+const { data: news, status, error, refresh } = await useAsyncData('news', async () => {
+  const docs = await prismic.client.getAllByType('news', { fetchOptions: { signal: AbortSignal.timeout(10000) } })
+  return docs.map(doc => ({ id: doc.id, title: doc.data.title || 'Foundation update', story: doc.data.story, image: doc.data.image }))
+}, { default: () => [] })
+const selectedId = ref<string | null>(null)
+const selected = computed(() => news.value?.find(item => item.id === selectedId.value))
+function closeModal() { selectedId.value = null }
 </script>
-
 <template>
-  <section class="mx-auto pb-16">
-    
-    <!-- Header -->
-    <section class="relative bg-gradient-to-r from-slate-800 to-slate-800 text-white py-20">
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px"></div>
-      </div>
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="max-w-3xl">
-          <h1 class="text-5xl md:text-6xl font-bold mb-6">News</h1>
-          <p class="text-xl text-slate-300 leading-relaxed">
-            Capturing moments of hope, resilience, and community as we fight breast cancer together across Ghana.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Groups -->
-    <section class="max-w-7xl mx-auto px-4 py-20">
-      <!-- Section Header -->
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-semibold mb-3 text-gray-900">
-          News & Stories
-        </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Latest news and inspiring stories from our mission
-        </p>
-      </div>
-
-      <!-- Image Grid -->
-      <div v-if="galleryGroups && galleryGroups.length > 0" class="flex gap-6">
-        <div
-            v-for="(newsItem, index) in galleryGroups"
-            :key="newsItem.id"
-            class="flex flex-col items-center  text-center cursor-pointer"
-            @click="openModal(newsItem, index)"
-        >
-          <div class="relative w-100 rounded-xl">
-            <NuxtImg
-                v-if="newsItem.image?.url"
-                :src="newsItem.image.url"
-                :alt="newsItem.image?.alt || newsItem.title"
-                class="w-120 h-72 mr-16 object-cover shadow-sm group-hover:scale-110 transition-transform duration-300"
-            />
-            <div class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-
-            </div>
-          </div>
-          <p class="mt-3 text-gray-800 font-semibold line-clamp-2">
-            {{ newsItem.title }}
-          </p>
-        </div>
-      </div>
-
-      <!-- Debug info - remove this after testing -->
-      <div v-else class="text-center py-10">
-        <p class="text-gray-500">No news items found. Total items: {{ galleryGroups?.length || 0 }}</p>
-      </div>
-    </section>
-
-    <!-- Modal -->
-    <Teleport to="body">
-      <Transition
-          enter-active-class="transition-opacity duration-300"
-          leave-active-class="transition-opacity duration-300"
-          enter-from-class="opacity-0"
-          leave-to-class="opacity-0"
-      >
-        <div
-            v-if="isModalOpen && selectedNews"
-            class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
-            @click.self="closeModal"
-        >
-          <!-- Close Button -->
-          <button
-              @click="closeModal"
-              class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
-              aria-label="Close modal"
-          >
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-
-          <!-- Previous Button -->
-          <button
-              v-if="selectedNewsIndex > 0"
-              @click="previousNews"
-              class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75"
-              aria-label="Previous story"
-          >
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-          </button>
-
-          <!-- Next Button -->
-          <button
-              v-if="selectedNewsIndex < galleryGroups.length - 1"
-              @click="nextNews"
-              class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75"
-              aria-label="Next story"
-          >
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-
-          <!-- Modal Content -->
-          <div class="max-w-6xl w-full max-h-[90vh] overflow-hidden bg-white rounded-lg shadow-2xl">
-            <div class="grid md:grid-cols-2 gap-0 h-full">
-              <!-- Image Section -->
-              <div class="relative bg-gray-100 min-h-[300px] md:min-h-[500px]">
-                <NuxtImg
-                    v-if="selectedNews.image?.url"
-                    :src="selectedNews.image.url"
-                    :alt="selectedNews.image?.alt || selectedNews.title"
-                    class="w-full h-full object-cover"
-                />
-              </div>
-
-              <!-- Story Section -->
-              <div class="p-8 flex flex-col overflow-y-auto max-h-[90vh]">
-                <div class="mb-4">
-                  <span class="text-sm text-pink-600 font-semibold uppercase tracking-wide">
-                    Story {{ selectedNewsIndex + 1 }} of {{ galleryGroups.length }}
-                  </span>
-                </div>
-
-                <h3 class="text-3xl font-bold text-gray-900 mb-6">
-                  {{ selectedNews.title }}
-                </h3>
-
-                <div class="prose prose-lg text-gray-700 leading-relaxed">
-                  <template v-if="selectedNews.story">
-                    <!-- If story is an array of rich text blocks -->
-                    <template v-if="Array.isArray(selectedNews.story)">
-                      <p v-for="(block, idx) in selectedNews.story" :key="idx">
-                        {{ block.text }}
-                      </p>
-                    </template>
-                    <!-- If story is already a string -->
-                    <div v-else-if="typeof selectedNews.story === 'string'" v-html="selectedNews.story"></div>
-                    <!-- If story is an object with text property -->
-                    <p v-else-if="selectedNews.story.text">
-                      {{ selectedNews.story.text }}
-                    </p>
-                    <!-- Fallback: try to stringify -->
-                    <p v-else>
-                      {{ JSON.stringify(selectedNews.story) }}
-                    </p>
-                  </template>
-                  <p v-else class="text-gray-500 italic">
-                    No story available for this item.
-                  </p>
-                </div>
-
-                <!-- Navigation Dots -->
-                <div class="mt-auto pt-8 flex gap-2 flex-wrap">
-                  <button
-                      v-for="(item, idx) in galleryGroups"
-                      :key="item.id"
-                      @click="selectedNewsIndex = idx; selectedNews = item"
-                      :class="[
-                        'w-3 h-3 rounded-full transition-all',
-                        idx === selectedNewsIndex ? 'bg-pink-600 w-8' : 'bg-gray-300 hover:bg-gray-400'
-                      ]"
-                      :aria-label="`Go to story ${idx + 1}`"
-                  ></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Transition>
-    </Teleport>
+  <section class="pb-12">
+    <AppPageIntro eyebrow="News & stories" title="Voices worth listening to." description="Updates and stories from our work for justice, prison reform, and humanitarian support across Ghana." />
+    <p v-if="status === 'pending'" role="status" class="ccf-feedback">Loading news…</p>
+    <div v-else-if="error" role="alert" class="ccf-feedback ccf-feedback-error">
+      <p>We couldn’t load the news. Please try again.</p>
+      <button type="button" class="mt-4 rounded border border-current px-4 py-3" @click="refresh()">Retry news</button>
+    </div>
+    <div v-else-if="news?.length" class="grid gap-6 pb-12 sm:grid-cols-2 lg:grid-cols-3">
+      <article v-for="item in news" :key="item.id" class="ccf-media-card ccf-news-card">
+        <button type="button" class="flex h-full w-full flex-col text-left" aria-haspopup="dialog" @click="selectedId = item.id">
+          <NuxtImg v-if="item.image?.url" :src="item.image.url" :alt="item.image.alt || ''" width="600" height="360" sizes="100vw sm:50vw lg:33vw" loading="lazy" class="aspect-[5/3] w-full object-cover" />
+          <span class="block p-5 text-xl font-semibold text-slate-900">{{ item.title }}</span>
+          <span class="mt-auto block px-5 pb-5 font-semibold text-green-800 underline underline-offset-4">Read story</span>
+        </button>
+      </article>
+    </div>
+    <p v-else role="status" class="py-10">No news has been published yet. Please check back for updates.</p>
+    <Modal :show="!!selected" :close="closeModal" :title="selected?.title || 'News story'">
+      <template v-if="selected">
+        <NuxtImg v-if="selected.image?.url" :src="selected.image.url" :alt="selected.image.alt || ''" width="900" sizes="100vw md:800px" class="mb-6 max-h-96 w-full rounded-lg object-contain" />
+        <PrismicRichText v-if="selected.story?.length" :field="selected.story" class="story-content" />
+        <p v-else>More details will be available soon.</p>
+      </template>
+    </Modal>
   </section>
 </template>
-
 <style scoped>
-.prose {
-  max-width: none;
-}
-
-.prose p {
-  margin-bottom: 1rem;
-  line-height: 1.75;
-}
-
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+.story-content :deep(p), .story-content :deep(ul), .story-content :deep(ol) { margin-block: 1rem; line-height: 1.7; }
+.story-content :deep(a) { color: #1e40af; text-decoration: underline; }
+.story-content :deep(ul) { list-style: disc; padding-left: 1.5rem; }
+.story-content :deep(ol) { list-style: decimal; padding-left: 1.5rem; }
 </style>

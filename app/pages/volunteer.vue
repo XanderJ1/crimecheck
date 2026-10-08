@@ -53,6 +53,7 @@ const error = ref<string | null>(null)
 const success = ref<string | null>(null)
 
 async function submitVolunteerApplication() {
+  if (loading.value) return
   loading.value = true
   error.value = null
   success.value = null
@@ -70,7 +71,7 @@ async function submitVolunteerApplication() {
     form.interest = ''
     form.message = ''
   } catch (err: any) {
-    error.value = err?.data?.message || err?.message || 'Unable to submit your application right now.'
+    error.value = err?.data?.statusMessage || err?.data?.message || 'Unable to submit your application right now.'
   } finally {
     loading.value = false
   }
@@ -78,21 +79,9 @@ async function submitVolunteerApplication() {
 </script>
 
 <template>
-  <section class="relative -mx-4 -mt-20 bg-slate-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 py-20 md:py-28">
-      <div class="max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-wide text-blue-300">Volunteer</p>
-        <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
-          Give your time to restore dignity and hope.
-        </h1>
-        <p class="mt-5 text-lg text-slate-300 leading-relaxed">
-          Join Crime Check Foundation's work in justice reform, prison support, humanitarian aid, and community advocacy across Ghana.
-        </p>
-      </div>
-    </div>
-  </section>
+  <AppPageIntro eyebrow="Volunteer" title="Give your time. Share your skills." description="Support our work in justice reform, prison support, humanitarian aid, and community advocacy across Ghana." />
 
-  <section class="max-w-7xl mx-auto py-16">
+  <section class="pb-16">
     <div class="grid lg:grid-cols-2 gap-10 items-start">
       <div>
         <h2 class="text-3xl font-bold text-gray-900">Ways to Help</h2>
@@ -104,7 +93,7 @@ async function submitVolunteerApplication() {
           <article
             v-for="opportunity in opportunities"
             :key="opportunity.title"
-            class="bg-white rounded-lg shadow ring-1 ring-gray-200 p-5"
+            class="ccf-value-card"
           >
             <h3 class="font-bold text-lg text-gray-900">{{ opportunity.title }}</h3>
             <p class="mt-2 text-sm text-gray-600 leading-relaxed">{{ opportunity.description }}</p>
@@ -113,7 +102,7 @@ async function submitVolunteerApplication() {
       </div>
 
       <form
-        class="bg-white rounded-lg shadow-lg ring-1 ring-gray-200 p-6 md:p-8 flex flex-col gap-5"
+        class="bg-white rounded-lg border border-slate-200 p-6 md:p-8 flex flex-col gap-5"
         @submit.prevent="submitVolunteerApplication"
       >
         <div>
@@ -122,10 +111,10 @@ async function submitVolunteerApplication() {
         </div>
 
         <label>
-          <span class="text-sm font-medium text-gray-700">Full Name</span>
+          <span class="text-sm font-medium text-gray-700">Full name (required)</span>
           <input
             v-model="form.name"
-            name="name"
+            name="name" autocomplete="name" maxlength="120"
             type="text"
             required
             class="mt-1 h-11 w-full rounded-lg border border-gray-300 bg-gray-50 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -134,10 +123,10 @@ async function submitVolunteerApplication() {
         </label>
 
         <label>
-          <span class="text-sm font-medium text-gray-700">Email</span>
+          <span class="text-sm font-medium text-gray-700">Email (required)</span>
           <input
             v-model="form.email"
-            name="email"
+            name="email" autocomplete="email" maxlength="160"
             type="email"
             required
             class="mt-1 h-11 w-full rounded-lg border border-gray-300 bg-gray-50 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -146,10 +135,10 @@ async function submitVolunteerApplication() {
         </label>
 
         <label>
-          <span class="text-sm font-medium text-gray-700">Phone</span>
+          <span class="text-sm font-medium text-gray-700">Phone (optional)</span>
           <input
             v-model="form.phone"
-            name="phone"
+            name="phone" autocomplete="tel" maxlength="60"
             type="tel"
             class="mt-1 h-11 w-full rounded-lg border border-gray-300 bg-gray-50 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="+233 ..."
@@ -157,7 +146,7 @@ async function submitVolunteerApplication() {
         </label>
 
         <label>
-          <span class="text-sm font-medium text-gray-700">Area of Interest</span>
+          <span class="text-sm font-medium text-gray-700">Area of interest (required)</span>
           <select
             v-model="form.interest"
             name="interest"
@@ -174,10 +163,10 @@ async function submitVolunteerApplication() {
         </label>
 
         <label class="flex flex-col">
-          <span class="text-sm font-medium text-gray-700">Tell us about your availability or skills</span>
+          <span class="text-sm font-medium text-gray-700">Availability or skills (required)</span>
           <textarea
             v-model="form.message"
-            name="message"
+            name="message" maxlength="2000"
             rows="4"
             required
             class="mt-1 rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -185,6 +174,7 @@ async function submitVolunteerApplication() {
           ></textarea>
         </label>
 
+        <p class="text-sm text-slate-700">We use these details to respond to your application. <NuxtLink to="/privacy" class="underline">How we use your information</NuxtLink>. For a follow-up, call <a href="tel:+233242074276" class="underline">+233 242 074 276</a>.</p>
         <button
           :disabled="loading"
           type="submit"
@@ -193,10 +183,10 @@ async function submitVolunteerApplication() {
           {{ loading ? 'Sending...' : 'Send Application' }}
         </button>
 
-        <p v-if="success" class="rounded-lg bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
+        <p role="status" v-if="success" class="rounded-lg bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
           {{ success }}
         </p>
-        <p v-if="error" class="rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+        <p role="alert" v-if="error" class="rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
           {{ error }}
         </p>
       </form>

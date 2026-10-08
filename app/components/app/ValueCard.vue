@@ -10,9 +10,9 @@
 </script>
 
 <template>
-    <div class="flex flex-col border  border-gray-400 rounded-xl p-5">
-        <NuxtImg class="w-10 h-10 mb-8" :src="image" alt="testimonial" />
-        <h3 class="font-bold mb-3">{{props.title}}</h3>
+    <div class="ccf-value-card">
+        <NuxtImg v-if="image" loading="lazy" width="40" height="40" class="w-10 h-10 mb-8" :src="image" alt="" />
+        <h3 class="text-xl font-semibold mb-3">{{props.title}}</h3>
         <p>{{props.message}}</p>
     </div>
 </template>

@@ -9,13 +9,13 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col border w-full border-gray-400 rounded-xl p-10">
-    <p class="text-xl text-center py-10">{{ props.message }}  </p>
-    <div class="flex justify-center gap-5">
-        <img class="w-[50px]  rounded-full h-[50px]" :src="props.image" alt="crow" />
-      <div class="flex flex-col gap-2">
-        <h4 class="font-bold">{{props.name}}</h4>
-        <p>{{props.role}}</p>
+  <div class="testimonial-card">
+    <blockquote>&ldquo;{{ props.message }}&rdquo;</blockquote>
+    <div class="flex items-center gap-4">
+        <img loading="lazy" width="50" height="50" class="w-[50px] shrink-0 object-cover rounded-full h-[50px]" :src="props.image" alt="" />
+      <div class="flex flex-col gap-1">
+        <p class="font-semibold text-sm">{{props.name}}</p>
+        <p class="text-sm text-slate-600">{{props.role}}</p>
       </div>
     </div>
   </div>
